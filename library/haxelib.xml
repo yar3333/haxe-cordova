@@ -1,0 +1,5 @@
+<project name="hxCordova" url="https://code.google.com/p/haxe-hxcordova/" license="MIT">
+	<user name="yar33"/>
+	<description>Apache Cordova is an open-source library for publishing web-based content on a wide variety of mobile platforms.</description>
+    <version name="1.0">Refactored and improved "cordova" haXe library.</version>
+</project>
