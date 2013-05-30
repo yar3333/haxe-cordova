@@ -49,7 +49,7 @@ extern class SQLError
 typedef LocalStorage =
 {
 	function key(index:Int) : String;
-	function getItem(key:String) : Dynamic;
+	function getItem(key:String) : String;
 	function setItem(key:String, value:String) : Void;
 	function removeItem(key:String) : Void;
 	function clear() : Void;
