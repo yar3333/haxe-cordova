@@ -1,0 +1,20 @@
+ID = [_a-zA-Z][_a-zA-Z0-9]*
+MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
+SLCOMMENT = \/\/[^\n]*
+COMMENTS = [ \t]*(?:MLCOMMENT|SLCOMMENT)(?:[ \t]*\n[ \t]*(?:MLCOMMENT|SLCOMMENT))*
+ANY_CHARS = (?:.|[\n])*?
+
+!// Type definitions.+\n!!
+!// Project:.+\n!!
+!// Definitions by:.+\n!!
+!// Definitions:.+\n!!
+!// Copyright.+\n!!
+!// Licensed under.+\n!!
+
+!/// <reference.+\n!!
+
+
+!\n\n//\n!!
+
+/(?:COMMENTS\n)?^declare var cordova : Cordova;\s*//m
+/(?:COMMENTS\n)?^declare module 'ID'\s*\{ANY_CHARS\}\s*//m
