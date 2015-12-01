@@ -62,7 +62,7 @@ REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:Stri
 //\n([ \t]*)function\s+(ID)\s*\((.*?)\n\s*function\s+\2\s*\(([^)]*)\)\s*[:]\s*(TYPE_COMPLEX)\s*;(.*)$/\n$1@:overload(function($4):$5{})\n$1function $2($3$6/sr
 
 // package & native
-/^/package cordova;\n\nimport js.html.*;\n\n
+/^/package cordova;\n\nimport js.*;\nimport js.html.*;\n\n
 
 // Float => Int
 /(\b(?:VARS_INT)\s*:\s*)Float\b/$1Int/
@@ -114,6 +114,4 @@ REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:Stri
 
 /(function new\([^)]+?\)\s*:\s*)ID\s*;/$1Void;/s
 
-//extern class (CLASSES)\b([^}]+?)\}\s*declare(?: var)? \1:\n\{/extern class $1$2/s
-
-
+/extern class (CLASSES)\b([^}]+?)\}\s*declare(?: var)? \1:\n\{/extern class $1$2/s

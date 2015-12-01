@@ -1,5 +1,6 @@
 package cordova.plugins;
 
+import js.*;
 import js.html.*;
 
 extern class Contacts
@@ -95,10 +96,7 @@ extern class Contact extends ContactProperties
 	function save(
 		onSuccess:Contact->Void,
 		onError:Error->Void) : Void;
-}
 
-declare var Contact:
-{
 	/** Constructor of Contact object */
 	function new(?id:String,
 		?displayName:String,
@@ -123,10 +121,7 @@ extern class ContactError
 	var code : Float;
 	/** Error message */
 	var message : String;
-}
 
-declare ContactError:
-{
 	function new(code:Float) : Void;
 	static var UNKNOWN_ERROR : Float;
 	static var INVALID_ARGUMENT_ERROR : Float;
@@ -152,10 +147,7 @@ extern class ContactName
 	@:optional var honorificPrefix : String;
 	/** The contact's suffix (example Esq.). */
 	@:optional var honorificSuffix : String;
-}
 
-declare ContactName:
-{
 	/** Constructor for ContactName object */
 	function new(?formatted:String,
 		?familyName:String,
@@ -185,10 +177,7 @@ extern class ContactField
 	var value : String;
 	/** Set to true if this ContactField contains the user's preferred value. */
 	var pref : Bool;
-}
 
-declare ContactField:
-{
 	/** Constructor for ContactField object */
 	function new(?type:String,
 		?value:String,
@@ -217,10 +206,7 @@ extern class ContactAddress
 	@:optional var postalCode : String;
 	/** The country name. */
 	@:optional var country : String;
-}
 
-declare ContactAddress:
-{
 	/** Constructor of ContactAddress object */
 	function new(?pref:Bool,
 		?type:String,
@@ -248,10 +234,7 @@ extern class ContactOrganization
 	@:optional var department : String;
 	/** The contact's title at the organization. */
 	@:optional var title : String;
-}
 
-declare ContactOrganization:
-{
 	/** Constructor for ContactOrganization object */
 	function new(?pref:Bool,
 		?type:String,
@@ -269,10 +252,7 @@ extern class ContactFindOptions
 	@:optional var multiple : Bool;
 	/* Contact fields to be returned back. If specified, the resulting Contact object only features values for these fields. */
 	@:optional var desiredFields : Array<String>;
-}
 
-declare ContactFindOptions:
-{
 	/** Constructor for ContactFindOptions object */
 	function new(?filter:String,
 		?multiple:Bool,
