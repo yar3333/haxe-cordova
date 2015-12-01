@@ -85,7 +85,7 @@ typedef Globalization =
 		?options:{ ?type:String, ?item:String }) : Void;
 	/**
 	 * Indicates whether daylight savings time is in effect for a given date using the client's time zone and calendar.
-	 * @param {Date}                   date Date to check
+	 * @param Date                   date Date to check
 	 * @param onSuccess Called on success with a properties object,
 	 *                  that should have a dst property with a boolean value.
 	 * @param onError   Called on error with a GlobalizationError object.
@@ -238,7 +238,7 @@ typedef GlobalizationCurrencyPattern =
 }
 
 /** An object representing a error from the Globalization API. */
-typedef GlobalizationError =
+extern class GlobalizationError
 {
 	/** One of the following codes representing the error type:
 	  * GlobalizationError.UNKNOWN_ERROR: 0
@@ -249,11 +249,7 @@ typedef GlobalizationError =
 	var code : Float;
 	/** A text message that includes the error's explanation and/or details */
 	var message : String;
-}
 
-/** An object representing a error from the Globalization API. */
-declare var GlobalizationError:
-{
 	static var UNKNOWN_ERROR : Float;
 	static var FORMATTING_ERROR : Float;
 	static var PARSING_ERROR : Float;
