@@ -128,7 +128,7 @@ typedef FileTransferError =
 declare FileTransferError:
 {
 	/** Constructor for FileTransferError object */
-	function new(?code:Float, ?source:String, ?target:String, ?status:Float, ?body:Dynamic, ?exception:Dynamic) : FileTransferError;
+	function new(?code:Float, ?source:String, ?target:String, ?status:Float, ?body:Dynamic, ?exception:Dynamic) : Void;
 	static var FILE_NOT_FOUND_ERR : Float;
 	static var INVALID_URL_ERR : Float;
 	static var CONNECTION_ERR : Float;

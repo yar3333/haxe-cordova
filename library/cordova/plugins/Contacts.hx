@@ -113,7 +113,7 @@ declare var Contact:
 		?note:String,
 		?photos:Array<ContactField>,
 		?categories:ContactField,
-		?urls:Array<ContactField>) : Contact;
+		?urls:Array<ContactField>) : Void;
 }
 
 /** The ContactError object is returned to the user through the contactError callback function when an error occurs. */
@@ -127,7 +127,7 @@ extern class ContactError
 
 declare ContactError:
 {
-	function new(code:Float) : ContactError;
+	function new(code:Float) : Void;
 	static var UNKNOWN_ERROR : Float;
 	static var INVALID_ARGUMENT_ERROR : Float;
 	static var TIMEOUT_ERROR : Float;
@@ -162,7 +162,7 @@ declare ContactName:
 		?givenName:String,
 		?middleName:String,
 		?honorificPrefix:String,
-		?honorificSuffix:String) : ContactName;
+		?honorificSuffix:String) : Void;
 }
 
 /**
@@ -192,7 +192,7 @@ declare ContactField:
 	/** Constructor for ContactField object */
 	function new(?type:String,
 		?value:String,
-		?pref:Bool) : ContactField;
+		?pref:Bool) : Void;
 }
 
 /**
@@ -229,7 +229,7 @@ declare ContactAddress:
 		?locality:String,
 		?region:String,
 		?postalCode:String,
-		?country:String) : ContactAddress;
+		?country:String) : Void;
 }
 
 /**
@@ -257,7 +257,7 @@ declare ContactOrganization:
 		?type:String,
 		?name:String,
 		?department:String,
-		?title:String) : ContactOrganization;
+		?title:String) : Void;
 }
 
 /** Search options to filter navigator.contacts.  */
@@ -276,5 +276,5 @@ declare ContactFindOptions:
 	/** Constructor for ContactFindOptions object */
 	function new(?filter:String,
 		?multiple:Bool,
-		?desiredFields:Array<String>) : ContactFindOptions;
+		?desiredFields:Array<String>) : Void;
 }

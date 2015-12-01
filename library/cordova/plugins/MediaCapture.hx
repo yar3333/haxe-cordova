@@ -115,7 +115,7 @@ typedef CaptureError =
 declare var CaptureError:
 {
 	/** Constructor for CaptureError  */
-	function new(code:Float, message:String) : CaptureError;
+	function new(code:Float, message:String) : Void;
 	CAPTURE_INTERNAL_ERR : Float,
 	CAPTURE_APPLICATION_BUSY : Float,
 	CAPTURE_INVALID_ARGUMENT : Float,

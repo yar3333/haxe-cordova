@@ -8,7 +8,7 @@ declare var Media:
 		src: String,
 		mediaSuccess: Void->Void,
 		?mediaError:MediaError->Dynamic,
-		?mediaStatus:Float->Void) : Media;
+		?mediaStatus:Float->Void) : Void;
 		//Media statuses
 		MEDIA_NONE : Int,
 		MEDIA_STARTING : Float,
