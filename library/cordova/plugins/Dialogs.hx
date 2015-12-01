@@ -4,7 +4,8 @@ import js.*;
 import js.html.*;
 
 /** This plugin provides access to some native dialog UI elements. */
-typedef Notification =
+@:noUsing
+@:native("window.navigator.notification") extern class Notification
 {
 	/**
 	 * Shows a custom alert or dialog box. Most Cordova implementations use a native dialog box for this feature,
@@ -14,7 +15,7 @@ typedef Notification =
 	 * @param title         Dialog title, defaults to 'Alert'.
 	 * @param buttonName    Button name, defaults to OK.
 	 */
-	function alert(message:String,
+	static function alert(message:String,
 		alertCallback: Void->Void,
 		?title:String,
 		?buttonName:String) : Void;
@@ -22,7 +23,7 @@ typedef Notification =
 	 * The device plays a beep sound.
 	 * @param times The number of times to repeat the beep. 
 	 */
-	function beep(times:Float) : Void;
+	static function beep(times:Float) : Void;
 	/**
 	 * Displays a customizable confirmation dialog box.
 	 * @param message           Dialog message.
@@ -31,7 +32,7 @@ typedef Notification =
 	 * @param title             Dialog title, defaults to Confirm.
 	 * @param buttonLabels      Array of strings specifying button labels, defaults to [OK,Cancel].
 	 */
-	function confirm(message:String,
+	static function confirm(message:String,
 		confirmCallback:Float->Void,
 		?title:String,
 		?buttonLabels:Array<String>) : Void;
@@ -43,7 +44,7 @@ typedef Notification =
 	 * @param buttonLabels      Array of strings specifying button labels, defaults to ["OK","Cancel"].
 	 * @param defaultText       Default textbox input value, default: "".
 	 */
-	function prompt(message:String,
+	static function prompt(message:String,
 		promptCallback:NotificationPromptResult->Void,
 		?title:String,
 		?buttonLabels:Array<String>,

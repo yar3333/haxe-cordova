@@ -3,14 +3,14 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-typedef Notification =
+extern class Notification
 {
 	/**
 	 * Vibrates the device for the specified amount of time.
 	 * @param time Milliseconds to vibrate the device. Ignored on iOS.
 	 * @deprecated
 	 */
-	function vibrate(time:Float) : Void;
+	static function vibrate(time:Float) : Void;
 	/**
 	 * Vibrates the device with a given pattern.
 	 * @param number[] pattern Pattern with which to vibrate the device.
@@ -20,10 +20,10 @@ typedef Notification =
 	 *                         or -1 for no repetition (default).
 	 * @deprecated
 	 */
-	function vibrateWithPattern(pattern:Array<Float>, repeat:Float) : Void;
+	static function vibrateWithPattern(pattern:Array<Float>, repeat:Float) : Void;
 	/**
 	 * Immediately cancels any currently running vibration.
 	 * @deprecated
 	 */
-	function cancelVibration() : Void;
+	static function cancelVibration() : Void;
 }
