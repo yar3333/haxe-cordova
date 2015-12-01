@@ -32,12 +32,12 @@ extern class Connection
 	 */
 	type: Float;
 
-	UNKNOWN : Float,
-	ETHERNET : Float,
-	WIFI : Float,
-	CELL_2G : Float,
-	CELL_3G : Float,
-	CELL_4G : Float,
-	CELL : Float,
-	NONE : Int;
+	static var UNKNOWN : Float;
+	static var ETHERNET : Float;
+	static var WIFI : Float;
+	static var CELL_2G : Float;
+	static var CELL_3G : Float;
+	static var CELL_4G : Float;
+	static var CELL : Float;
+	static var NONE : Int;
 }

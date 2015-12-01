@@ -6,4 +6,4 @@ ANY_CHARS = (?:.|[\n])*?
 
 /(?:COMMENTS\n)?^declare var device : Device;\s*//m
 
-/extern class (Device)/@:noUsing\n@:native("window.device") extern class $1/
+/extern class (Device)\b/@:noUsing\n@:native("window.device") extern class $1/

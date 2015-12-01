@@ -61,8 +61,7 @@ typedef CompassOptions =
 }
 
 /** A CompassError object is returned to the onError callback function when an error occurs. */
-@:noUsing
-@:native("window.navigator.compass") extern class CompassError
+extern class CompassError
 {
 	/**
 	 * One of the predefined error codes
@@ -73,6 +72,6 @@ typedef CompassOptions =
 
 	/** Constructor for CompassError object */
 	function new(code:Float) : Void;
-	COMPASS_INTERNAL_ERR : Float,
-	COMPASS_NOT_SUPPORTED: Float;
+	static var COMPASS_INTERNAL_ERR : Float;
+	static var COMPASS_NOT_SUPPORTED : Float;
 }

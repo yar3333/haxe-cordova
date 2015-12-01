@@ -7,4 +7,4 @@ ANY_CHARS = (?:.|[\n])*?
 /(?:COMMENTS\n)?^declare var cordova : Cordova;\s*//m
 /(?:COMMENTS\n)?^declare module 'ID'\s*\{ANY_CHARS\}\s*//m
 
-/extern class Cordova/@:noUsing\n@:native("window.cordova") extern class Cordova/
+/extern class (Cordova)\b/@:noUsing\n@:native("window.cordova") extern class $1/
