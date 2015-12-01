@@ -1,0 +1,1 @@
+/extern class (Accelerometer)/@:noUsing\n@:native("window.navigator.accelerometer") extern class $1/

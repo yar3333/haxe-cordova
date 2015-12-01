@@ -8,20 +8,21 @@ import js.html.*;
  * that detects the change (delta) in movement relative to the current device orientation,
  * in three dimensions along the x, y, and z axis.
  */
-typedef Accelerometer =
+@:noUsing
+@:native("window.navigator.accelerometer") extern class Accelerometer
 {
 	/**
 	 * Stop watching the Acceleration referenced by the watchID parameter.
 	 * @param watchID The ID returned by navigator.accelerometer.watchAcceleration.
 	 */
-	function clearWatch(watchID:WatchHandle) : Void;
+	static function clearWatch(watchID:WatchHandle) : Void;
 	/**
 	 * Get the current acceleration along the x, y, and z axes.
 	 * These acceleration values are returned to the accelerometerSuccess callback function.
 	 * @param accelerometerSuccess Success callback that gets the Acceleration object.
 	 * @param accelerometerError Success callback
 	 */
-	function getCurrentAcceleration(
+	static function getCurrentAcceleration(
 		accelerometerSuccess:Acceleration->Void,
 		accelerometerError: Void->Void) : Void;
 	/**
@@ -34,7 +35,7 @@ typedef Accelerometer =
 	 * @param  accelerometerError   Error callback.
 	 * @param  accelerometerOptions Object with options for watchAcceleration
 	 */
-	function watchAcceleration(
+	static function watchAcceleration(
 		accelerometerSuccess:Acceleration->Void,
 		accelerometerError: Void->Void,
 		?accelerometerOptions:AccelerometerOptions) : WatchHandle;
@@ -65,5 +66,5 @@ typedef AccelerometerOptions =
 }
 
 /** Abstract type for watch IDs used by Accelerometer. Values of these type are actually `number` at runtime.*/
-typedef WatchHandle =
-{ }
+typedef WatchHandle = Dynamic;
+

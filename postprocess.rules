@@ -7,6 +7,7 @@ CLASSES = CLASSES|Cordova
 CLASSES = CLASSES|Camera
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
 CLASSES = CLASSES|Device
+CLASSES = CLASSES|Accelerometer
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
 
 VARS_INT = NONE
@@ -17,8 +18,9 @@ METHODS_RETURN_INT = NONE
 
 THREE_ENUMS = NONE
 
-DYNAMIC = CordovaPlugins
-STATIC = Cordova|Device
+DYNAMIC = CordovaPlugins|WatchHandle
+
+STATIC = Cordova|Device|Accelerometer
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
