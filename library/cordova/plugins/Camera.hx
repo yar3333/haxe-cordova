@@ -14,7 +14,7 @@ import js.html.*;
 	 * @param onSuccess Success callback, that called when cleanup succeeds.
 	 * @param onError Error callback, that get an error message.
 	 */
-	function cleanup(
+	static function cleanup(
 		onSuccess: Void->Void,
 		onError:String->Void) : Void;
 	/**
@@ -24,7 +24,7 @@ import js.html.*;
 	 * @param cameraError Error callback, that get an error message.
 	 * @param cameraOptions Optional parameters to customize the camera settings.
 	 */
-	function getPicture(
+	static function getPicture(
 		cameraSuccess:String->Void,
 		cameraError:String->Void,
 		?cameraOptions:CameraOptions) : Void;

@@ -8,7 +8,7 @@ import js.html.*;
  * the direction or heading that the device is pointed, typically from the top of the device.
  * It measures the heading in degrees from 0 to 359.99, where 0 is north.
  */
-typedef Compass =
+extern class Compass
 {
 	/**
 	 * Get the current compass heading. The compass heading is returned via a CompassHeading
@@ -16,7 +16,7 @@ typedef Compass =
 	 * @param onSuccess Success callback that passes CompassHeading object.
 	 * @param onError Error callback that passes CompassError object.
 	 */
-	function getCurrentHeading(
+	static function getCurrentHeading(
 		onSuccess:CompassHeading->Void,
 		onError:CompassError->Void,
 		?options:CompassOptions) : Void;
@@ -29,7 +29,7 @@ typedef Compass =
 	 * @param onError   Error callback that passes CompassError object.
 	 * @param options   CompassOptions object
 	 */
-	function watchHeading(
+	static function watchHeading(
 		onSuccess:CompassHeading->Void,
 		onError:CompassError->Void,
 		?options:CompassOptions) : Float;
@@ -37,7 +37,7 @@ typedef Compass =
 	 * Stop watching the compass referenced by the watch ID parameter.
 	 * @param id The ID returned by navigator.compass.watchHeading.
 	 */
-	function clearWatch(id:Float) : Void;
+	static function clearWatch(id:Float) : Void;
 }
 
 /** A CompassHeading object is returned to the compassSuccess callback function. */
