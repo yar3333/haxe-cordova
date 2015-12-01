@@ -129,9 +129,9 @@ declare FileTransferError:
 {
 	/** Constructor for FileTransferError object */
 	function new(?code:Float, ?source:String, ?target:String, ?status:Float, ?body:Dynamic, ?exception:Dynamic) : FileTransferError;
-	FILE_NOT_FOUND_ERR : Float,
-	INVALID_URL_ERR : Float,
-	CONNECTION_ERR : Float,
-	ABORT_ERR : Float,
-	NOT_MODIFIED_ERR : Float;
+	static var FILE_NOT_FOUND_ERR : Float;
+	static var INVALID_URL_ERR : Float;
+	static var CONNECTION_ERR : Float;
+	static var ABORT_ERR : Float;
+	static var NOT_MODIFIED_ERR : Float;
 }

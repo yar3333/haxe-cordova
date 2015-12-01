@@ -332,18 +332,18 @@ typedef FileError =
 declare FileError:
 {
 	function new(code:Float) : FileError;
-	NOT_FOUND_ERR : Float,
-	SECURITY_ERR : Float,
-	ABORT_ERR : Float,
-	NOT_READABLE_ERR : Float,
-	ENCODING_ERR : Float,
-	NO_MODIFICATION_ALLOWED_ERR : Float,
-	INVALID_STATE_ERR : Float,
-	SYNTAX_ERR : Float,
-	INVALID_MODIFICATION_ERR : Float,
-	QUOTA_EXCEEDED_ERR : Float,
-	TYPE_MISMATCH_ERR : Float,
-	PATH_EXISTS_ERR : Float;
+	static var NOT_FOUND_ERR : Float;
+	static var SECURITY_ERR : Float;
+	static var ABORT_ERR : Float;
+	static var NOT_READABLE_ERR : Float;
+	static var ENCODING_ERR : Float;
+	static var NO_MODIFICATION_ALLOWED_ERR : Float;
+	static var INVALID_STATE_ERR : Float;
+	static var SYNTAX_ERR : Float;
+	static var INVALID_MODIFICATION_ERR : Float;
+	static var QUOTA_EXCEEDED_ERR : Float;
+	static var TYPE_MISMATCH_ERR : Float;
+	static var PATH_EXISTS_ERR : Float;
 }
 
 /*
