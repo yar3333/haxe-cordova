@@ -53,7 +53,7 @@ declare var Database:
 		displayname: String,
 		size: Float,
 		creationCallback:Database->Void) : Database;
-};
+}
 
 typedef SqlTransaction =
 {
@@ -73,7 +73,7 @@ typedef SqlTransaction =
 declare SqlTransaction:
 {
 	function new() : SqlTransaction;
-};
+}
 
 typedef SqlResultSet =
 {
@@ -105,4 +105,4 @@ declare SqlError:
 	SYNTAX_ERR : Float,
 	CONSTRAINT_ERR : Float,
 	TIMEOUT_ERR : Float
-};
+}

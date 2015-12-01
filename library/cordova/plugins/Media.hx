@@ -15,7 +15,7 @@ declare var Media:
 		MEDIA_RUNNING : Float,
 		MEDIA_PAUSED : Float,
 		MEDIA_STOPPED: Float
-};
+}
 
 /**
  * This plugin provides the ability to record and play back audio files on a device.

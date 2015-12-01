@@ -7,9 +7,12 @@ library: native-ts FORCE
 	haxelib run refactor process -es -ec library *.hx beauty_haxe.rules
 	haxelib run refactor reindent library *.hx 4 4 4 4
 	haxelib run refactor process library *.hx postprocess.rules
+	
 	haxelib run refactor processFile library/cordova/Cordova.hx postprocess-Cordova.rules
 	#haxelib run refactor processFile library/cordova/plugins/BatteryStatus.hx postprocess-BatteryStatus.rules
 	haxelib run refactor processFile library/cordova/plugins/Camera.hx postprocess-Camera.rules
+	haxelib run refactor processFile library/cordova/plugins/Contacts.hx postprocess-Contacts.rules
+	
 	haxelib run refactor replace library/cordova/plugins *.hx "%package cordova;%package cordova.plugins;%"
 	haxelib run refactor override library
 	#cp -r manual/* library

@@ -321,7 +321,7 @@ declare var FileWriter:
 	INIT : Float,
 	WRITING : Float,
 	DONE: Float
-};
+}
 
 typedef FileError =
 {
@@ -344,7 +344,7 @@ declare FileError:
 	QUOTA_EXCEEDED_ERR : Float,
 	TYPE_MISMATCH_ERR : Float,
 	PATH_EXISTS_ERR : Float
-};
+}
 
 /*
  * Constants defined in fileSystemPaths

@@ -60,7 +60,7 @@ typedef FileTransfer =
 declare var FileTransfer:
 {
 	function new() : FileTransfer;
-};
+}
 
 /** A FileUploadResult object is passed to the success callback of the FileTransfer object's upload() method. */
 typedef FileUploadResult =

@@ -1,0 +1,10 @@
+ID = \b[_a-zA-Z][_a-zA-Z0-9]*\b
+TYPE = (?:(?:ID|\{[^}]*\})(?:\[\])*\s*)
+
+#/(extern class Contact\b.+?)\}\s*declare var Contact:\n\{/$1/s
+#/(extern class ContactError\b.+?)\}\s*declare ContactError:\n\{/$1/s
+#/(extern class ContactName\b.+?)\}\s*declare ContactName:\n\{/$1/s
+#/(extern class ContactField\b.+?)\}\s*declare ContactField:\n\{/$1/s
+#/(extern class ContactAddress\b.+?)\}\s*declare ContactAddress:\n\{/$1/s
+#/(extern class ContactOrganization\b.+?)\}\s*declare ContactOrganization:\n\{/$1/s
+#/(extern class ContactFindOptions\b.+?)\}\s*declare ContactFindOptions:\n\{/$1/s
