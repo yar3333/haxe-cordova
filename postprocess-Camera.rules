@@ -11,6 +11,3 @@ AFTER_TYPE = :(\n\s*\{[^}]*?\})
 /\b(MediaType)AFTER_TYPE/static var $1 :$2;/
 /\b(PictureSourceType)AFTER_TYPE/static var $1 :$2;/
 /\b(PopoverArrowDirection)AFTER_TYPE/static var $1 :$2/
-
-
-/};\s*$/}\n/s
