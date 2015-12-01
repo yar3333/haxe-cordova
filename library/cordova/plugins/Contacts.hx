@@ -2,7 +2,7 @@ package cordova.plugins;
 
 import js.html.*;
 
-typedef Contacts =
+extern class Contacts
 {
 	/**
 	 * The navigator.contacts.create method is synchronous, and returns a new Contact object.
@@ -36,7 +36,7 @@ typedef Contacts =
 		onError:ContactError->Void) : Void
 }
 
-typedef ContactProperties =
+extern class ContactProperties
 {
 	/** A globally unique identifier. */
 	@:optional var id : String;
@@ -73,10 +73,8 @@ typedef ContactProperties =
  * from the device contacts database. Contacts can also be retrieved (individually or in bulk)
  * from the database by invoking the navigator.contacts.find method.
  */
-typedef Contact =
+extern class Contact extends ContactProperties
 {
-	>ContactProperties,
-
 	/**
 	 * Returns a new Contact object that is a deep copy of the calling object, with the id property set to null
 	 */
@@ -116,10 +114,10 @@ declare var Contact:
 		?photos:Array<ContactField>,
 		?categories:ContactField,
 		?urls:Array<ContactField>) : Contact
-};
+}
 
 /** The ContactError object is returned to the user through the contactError callback function when an error occurs. */
-typedef ContactError =
+extern class ContactError
 {
 	/** Error code */
 	var code : Float;
@@ -137,10 +135,10 @@ declare ContactError:
 	IO_ERROR : Float,
 	NOT_SUPPORTED_ERROR : Float,
 	PERMISSION_DENIED_ERROR: Float
-};
+}
 
 /** Contains different kinds of information about a Contact object's name. */
-typedef ContactName =
+extern class ContactName
 {
 	/** The complete name of the contact. */
 	@:optional var formatted : String;
@@ -165,7 +163,7 @@ declare ContactName:
 		?middleName:String,
 		?honorificPrefix:String,
 		?honorificSuffix:String) : ContactName
-};
+}
 
 /**
  * The ContactField object is a reusable component that represents contact fields generically.
@@ -179,7 +177,7 @@ declare ContactName:
  * url when the value attribute contains a URL to the photo image, or base64 when the value
  * contains a base64-encoded image string.
  */
-typedef ContactField =
+extern class ContactField
 {
 	/** A string that indicates what type of field this is, home for example. */
 	var type : String;
@@ -195,13 +193,13 @@ declare ContactField:
 	function new(?type:String,
 		?value:String,
 		?pref:Bool) : ContactField
-};
+}
 
 /**
  * The ContactAddress object stores the properties of a single address of a contact.
  * A Contact object may include more than one address in a ContactAddress[] array.
  */
-typedef ContactAddress =
+extern class ContactAddress
 {
 	/** Set to true if this ContactAddress contains the user's preferred value. */
 	@:optional var pref : Bool;
@@ -232,13 +230,13 @@ declare ContactAddress:
 		?region:String,
 		?postalCode:String,
 		?country:String) : ContactAddress
-};
+}
 
 /**
  * The ContactOrganization object stores a contact's organization properties. A Contact object stores
  * one or more ContactOrganization objects in an array.
  */
-typedef ContactOrganization =
+extern class ContactOrganization
 {
 	/** Set to true if this ContactOrganization contains the user's preferred value. */
 	@:optional var pref : Bool;
@@ -260,10 +258,10 @@ declare ContactOrganization:
 		?name:String,
 		?department:String,
 		?title:String) : ContactOrganization
-};
+}
 
 /** Search options to filter navigator.contacts.  */
-typedef ContactFindOptions =
+extern class ContactFindOptions
 {
 	/** The search string used to find navigator.contacts. */
 	@:optional var filter : String;
@@ -279,4 +277,4 @@ declare ContactFindOptions:
 	function new(?filter:String,
 		?multiple:Bool,
 		?desiredFields:Array<String>) : ContactFindOptions
-};
+}
