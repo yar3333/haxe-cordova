@@ -5,10 +5,7 @@ DELETE_TYPES = Navigator
 CLASSES = Document|Window
 CLASSES = CLASSES|Cordova
 CLASSES = CLASSES|Camera
-
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
-//|ContactError|ContactName|ContactField|ContactAddress|ContactOrganization|ContactFindOptions
-
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
 
 VARS_INT = NONE
