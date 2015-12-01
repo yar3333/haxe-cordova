@@ -1,0 +1,6 @@
+/function (requestFileSystem)\(\s*([^)]+?\)\s*:\s*Void);/static inline function $1(\n\t\twindow:Window,\n\t\t$2\n\t\t(cast window).$1(type, size, successCallback, errorCallback);/m
+/function (resolveLocalFileSystemURI)\(\s*([^)]+?\)\s*:\s*Void);/static inline function $1(\n\t\twindow:Window,\n\t\t$2\n\t\t(cast window).$1(uri, successCallback, errorCallback);/m
+
+/declare var FileWriter:/extern class FileWriter/
+/extern class Cordova\b/@:native("window.cordova") extern class FileSystemConstants/
+/(\n\s*)(file:)/$1static var $2/

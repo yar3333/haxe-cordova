@@ -12,20 +12,25 @@ extern class Window
 	 * @param successCallback   The callback that is called when the user agent provides a filesystem.
 	 * @param errorCallback     A callback that is called when errors happen, or when the request to obtain the filesystem is denied.
 	 */
-	function requestFileSystem(
+	static inline function requestFileSystem(
+		window:Window,
 		type: Float,
 		size: Float,
 		successCallback:FileSystem->Void,
-		?errorCallback:FileError->Void) : Void;
+		?errorCallback:FileError->Void) : Void
+		(cast window).requestFileSystem(type, size, successCallback, errorCallback);
 	/**
 	 * Look up file system Entry referred to by local URI.
 	 * @param string uri       URI referring to a local file or directory
 	 * @param successCallback  invoked with Entry object corresponding to URI
 	 * @param errorCallback    invoked if error occurs retrieving file system entry
 	 */
-	function resolveLocalFileSystemURI(uri:String,
+	static inline function resolveLocalFileSystemURI(
+		window:Window,
+		uri:String,
 		successCallback:Entry->Void,
-		?errorCallback:FileError->Void) : Void;
+		?errorCallback:FileError->Void) : Void
+		(cast window).resolveLocalFileSystemURI(uri, successCallback, errorCallback);
 	var TEMPORARY : Float;
 	var PERSISTENT : Float;
 }
@@ -43,7 +48,7 @@ typedef FileSystem =
  * An abstract interface representing entries in a file system,
  * each of which may be a File or DirectoryEntry.
  */
-typedef Entry =
+extern class Entry
 {
 	/** Entry is a file. */
 	var isFile : Bool;
@@ -137,10 +142,8 @@ typedef Metadata =
 }
 
 /** This interface represents a directory on a file system. */
-typedef DirectoryEntry =
+extern class DirectoryEntry extends Entry
 {
-	>Entry,
-
 	/**
 	 * Creates a new DirectoryReader to read Entries from this Directory.
 	 */
@@ -209,7 +212,7 @@ typedef Flags =
  *     If not all entries have been returned, the array produced by readEntries must not be empty.
  *     The entries produced by readEntries must not include the directory itself ["."] or its parent [".."].
  */
-typedef DirectoryReader =
+extern class DirectoryReader
 {
 	/**
 	 * Read the next block of entries from this directory.
@@ -225,10 +228,8 @@ typedef DirectoryReader =
 }
 
 /** This interface represents a file on a file system. */
-typedef FileEntry =
+extern class FileEntry extends Entry
 {
-	>Entry,
-
 	/**
 	 * Creates a new FileWriter associated with the file that this FileEntry represents.
 	 * @param successCallback A callback that is called with the new FileWriter.
@@ -249,10 +250,8 @@ typedef FileEntry =
  * This interface provides methods to monitor the asynchronous writing of blobs
  * to disk using progress events and event handler attributes.
  */
-typedef FileSaver =
+extern class FileSaver extends EventTarget
 {
-	>EventTarget,
-
 	/** Terminate file operation */
 	function abort() : Void;
 	/**
@@ -283,10 +282,8 @@ typedef FileSaver =
  * This interface expands on the FileSaver interface to allow for multiple write
  * actions, rather than just saving a single Blob.
  */
-typedef FileWriter =
+extern class FileWriter extends FileSaver
 {
-	>FileSaver,
-
 	/**
 	 * The byte offset at which the next write to the file will occur. This always less or equal than length.
 	 * A newly-created FileWriter will have position set to 0.
@@ -299,7 +296,7 @@ typedef FileWriter =
 	var length : Float;
 	/**
 	 * Write the supplied data to the file at position.
-	 * @param {Blob} data The blob to write.
+	 * @param Blob data The blob to write.
 	 */
 	function write(data:Blob) : Void;
 	/**
@@ -314,11 +311,7 @@ typedef FileWriter =
 	 * @param size The size to which the length of the file is to be adjusted, measured in bytes.
 	 */
 	function truncate(size:Float) : Void;
-}
 
-/* FileWriter states */
-declare var FileWriter:
-{
 	static var INIT : Float;
 	static var WRITING : Float;
 	static var DONE : Float;
@@ -347,9 +340,9 @@ extern class FileError
 /*
  * Constants defined in fileSystemPaths
  */
-extern class Cordova
+@:native("window.cordova") extern class FileSystemConstants
 {
-	file:
+	static var file:
 	{
 		/* Read-only directory where the application is installed. */
 		applicationDirectory : String,

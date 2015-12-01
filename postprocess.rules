@@ -4,6 +4,7 @@ DELETE_TYPES = Navigator
 
 CLASSES = Document|Window
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
+CLASSES = CLASSES|Entry|DirectoryEntry|FileEntry|EventTarget|DirectoryReader|FileSaver|FileWriter
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
 
 STATIC = Cordova|Camera|Device|Accelerometer|Compass|Notification
@@ -31,8 +32,11 @@ FUNC_TO_VAR = \s*\([^)]*\b)
 FUNC_VAR_TO_FLOAT = \s*:\s*)Float/$1Int/
 
 MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
+SLCOMMENT = \/\/[^\n]*
+COMMENTS = [ \t]*(?:MLCOMMENT|SLCOMMENT)(?:[ \t]*\n[ \t]*(?:MLCOMMENT|SLCOMMENT))*
 CALLB_TYPE = TYPE->TYPE(?:->TYPE)*
-BODY = \{[^}]*\}\s*
+BODY_WO_END_BRACKET = \{[^}]*
+BODY = BODY_WO_END_BRACKET\}\s*
 ANY_CHARS = (?:.|[\n])*?
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -95,10 +99,12 @@ REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:Stri
 
 /};/}/
 
+/(@param\s+)\{(ID)\}/$1$2/
+
 /:(\s*TYPE)\s*?\n}/:$1;\n}/
 /(declare(?: var)? ID:\s*\{[^{}]*?\n[ \t]+)([_A-Z][_A-Z0-9]*)\s*:\s*(ID)[,;]/$1static var $2 : $3;/sr
 
-/extern interface (ID)\b([^}]+?)\}\s*declare(?: var)? \1:\n\{/extern class $1$2/s
+/extern interface (ID)\b([^{]*?BODY_WO_END_BRACKET)\}\s*(?:COMMENTS)?\s*declare(?:\s+var)?\s+\1\s*:\s*\{/extern class $1$2/s
 
 /extern interface (CLASSES|STATIC)\b/extern class $1/
 /extern interface (DELETE_TYPES)\n(?:BODY)//m
