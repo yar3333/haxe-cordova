@@ -8,7 +8,8 @@ import js.html.*;
  * the direction or heading that the device is pointed, typically from the top of the device.
  * It measures the heading in degrees from 0 to 359.99, where 0 is north.
  */
-extern class Compass
+@:noUsing
+@:native("window.navigator.compass") extern class Compass
 {
 	/**
 	 * Get the current compass heading. The compass heading is returned via a CompassHeading
@@ -60,7 +61,8 @@ typedef CompassOptions =
 }
 
 /** A CompassError object is returned to the onError callback function when an error occurs. */
-extern class CompassError
+@:noUsing
+@:native("window.navigator.compass") extern class CompassError
 {
 	/**
 	 * One of the predefined error codes
