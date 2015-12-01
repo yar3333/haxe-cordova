@@ -114,11 +114,11 @@ extern class CaptureError
 
 	/** Constructor for CaptureError  */
 	function new(code:Float, message:String) : Void;
-	CAPTURE_INTERNAL_ERR : Float,
-	CAPTURE_APPLICATION_BUSY : Float,
-	CAPTURE_INVALID_ARGUMENT : Float,
-	CAPTURE_NO_MEDIA_FILES : Float,
-	CAPTURE_NOT_SUPPORTED : Float;
+	static var CAPTURE_INTERNAL_ERR : Float;
+	static var CAPTURE_APPLICATION_BUSY : Float;
+	static var CAPTURE_INVALID_ARGUMENT : Float;
+	static var CAPTURE_NO_MEDIA_FILES : Float;
+	static var CAPTURE_NOT_SUPPORTED : Float;
 }
 
 /** Encapsulates audio capture configuration options. */

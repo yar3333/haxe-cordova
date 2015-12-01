@@ -319,9 +319,9 @@ typedef FileWriter =
 /* FileWriter states */
 declare var FileWriter:
 {
-	INIT : Float,
-	WRITING : Float,
-	DONE: Float;
+	static var INIT : Float;
+	static var WRITING : Float;
+	static var DONE : Float;
 }
 
 extern class FileError

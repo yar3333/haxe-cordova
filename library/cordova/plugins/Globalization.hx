@@ -254,8 +254,8 @@ typedef GlobalizationError =
 /** An object representing a error from the Globalization API. */
 declare var GlobalizationError:
 {
-	UNKNOWN_ERROR : Float,
-	FORMATTING_ERROR : Float,
-	PARSING_ERROR : Float,
-	PATTERN_ERROR : Float;
+	static var UNKNOWN_ERROR : Float;
+	static var FORMATTING_ERROR : Float;
+	static var PARSING_ERROR : Float;
+	static var PATTERN_ERROR : Float;
 }

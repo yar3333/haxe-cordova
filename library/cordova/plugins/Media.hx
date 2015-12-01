@@ -11,11 +11,11 @@ declare var Media:
 		?mediaError:MediaError->Dynamic,
 		?mediaStatus:Float->Void) : Void;
 		//Media statuses
-		MEDIA_NONE : Int,
-		MEDIA_STARTING : Float,
-		MEDIA_RUNNING : Float,
-		MEDIA_PAUSED : Float,
-		MEDIA_STOPPED: Float;
+		static var MEDIA_NONE : Int;
+		static var MEDIA_STARTING : Float;
+		static var MEDIA_RUNNING : Float;
+		static var MEDIA_PAUSED : Float;
+		static var MEDIA_STOPPED : Float;
 }
 
 /**

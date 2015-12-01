@@ -1,6 +1,6 @@
 AFTER_TYPE = :(\n\s*\{[^}]*?\})
 
-/extern class (Camera\b)/@:noUsing\n@:native("window.navigator.camera") extern class $1/
+/extern class (Camera)\b/@:noUsing\n@:native("window.navigator.camera") extern class $1/
 
 /declare var (Camera):/@:noUsing\n@:native("window.navigator.camera") extern class $1Constants/
 
