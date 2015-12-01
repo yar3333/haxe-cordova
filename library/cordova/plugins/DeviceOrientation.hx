@@ -60,7 +60,7 @@ typedef CompassOptions =
 }
 
 /** A CompassError object is returned to the onError callback function when an error occurs. */
-typedef CompassError =
+extern class CompassError
 {
 	/**
 	 * One of the predefined error codes
@@ -68,10 +68,7 @@ typedef CompassError =
 	 *     CompassError.COMPASS_NOT_SUPPORTED
 	 */
 	var code : Float;
-}
 
-declare var CompassError:
-{
 	/** Constructor for CompassError object */
 	function new(code:Float) : Void;
 	COMPASS_INTERNAL_ERR : Float,

@@ -324,14 +324,11 @@ declare var FileWriter:
 	DONE: Float;
 }
 
-typedef FileError =
+extern class FileError
 {
 	/** Error code */
 	var code : Float;
-}
 
-declare FileError:
-{
 	function new(code:Float) : Void;
 	static var NOT_FOUND_ERR : Float;
 	static var SECURITY_ERR : Float;

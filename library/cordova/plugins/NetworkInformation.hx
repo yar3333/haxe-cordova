@@ -3,6 +3,7 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
+;
 }
 
 extern class Document
@@ -15,7 +16,7 @@ extern class Document
  * The connection object, exposed via navigator.connection, provides information
  * about the device's cellular and wifi connection.
  */
-typedef Connection =
+extern class Connection
 {
 	/**
 	 * This property offers a fast way to determine the device's network connection state, and type of connection.
@@ -30,10 +31,7 @@ typedef Connection =
 	 *     Connection.NONE
 	 */
 	type: Float;
-}
 
-declare var Connection:
-{
 	UNKNOWN : Float,
 	ETHERNET : Float,
 	WIFI : Float,
