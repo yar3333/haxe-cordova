@@ -7,7 +7,7 @@ import js.html.*;
  * The FileTransfer object provides a way to upload files using an HTTP multi-part POST request,
  * and to download files as well.
  */
-typedef FileTransfer =
+extern class FileTransfer
 {
 	/** Called with a ProgressEvent whenever a new chunk of data is transferred.  */
 	var onprogress : ProgressEvent->Void;
@@ -56,10 +56,7 @@ typedef FileTransfer =
 	 * which has an error code of FileTransferError.ABORT_ERR.
 	 */
 	function abort() : Void;
-}
 
-declare var FileTransfer:
-{
 	function new() : FileTransfer;
 }
 
@@ -103,7 +100,7 @@ typedef FileDownloadOptions =
 }
 
 /** A FileTransferError object is passed to an error callback when an error occurs. */
-typedef FileTransferError =
+extern class FileTransferError
 {
 	/**
 	 * One of the predefined error codes listed below.
@@ -124,10 +121,7 @@ typedef FileTransferError =
 	var body : String;
 	/* Exception that is thrown by native code */
 	var exception : Dynamic;
-}
 
-declare FileTransferError:
-{
 	/** Constructor for FileTransferError object */
 	function new(?code:Float, ?source:String, ?target:String, ?status:Float, ?body:Dynamic, ?exception:Dynamic) : Void;
 	static var FILE_NOT_FOUND_ERR : Float;

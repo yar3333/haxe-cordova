@@ -20,7 +20,7 @@ extern class Window
 		?creationCallback:Database->Void) : Database;
 }
 
-typedef Database =
+extern class Database
 {
 	/**
 	 * Starts new transaction.
@@ -44,10 +44,7 @@ typedef Database =
 	var version : String;
 	var displayName : String;
 	var size : Float;
-}
 
-declare var Database:
-{
 	/** Constructor for Database object */
 	function new(name:String,
 		version: String,
@@ -56,7 +53,7 @@ declare var Database:
 		creationCallback:Database->Void) : Void;
 }
 
-typedef SqlTransaction =
+extern class SqlTransaction
 {
 	/**
 	 * Executes SQL statement via current transaction.
@@ -69,10 +66,7 @@ typedef SqlTransaction =
 		?arguments:Array<Dynamic>,
 		?successCallback:SqlTransaction->SqlResultSet->Void,
 		?errorCallback:SqlTransaction->SqlError->Dynamic) : Void;
-}
 
-declare SqlTransaction:
-{
 	function new() : SqlTransaction;
 }
 
@@ -89,14 +83,11 @@ typedef SqlResultSetRowList =
 	function item(index:Float) : Dynamic;
 }
 
-typedef SqlError =
+extern class SqlError
 {
 	var code : Float;
 	var message : String;
-}
 
-declare SqlError:
-{
 	// Error code constants from http://www.w3.org/TR/webdatabase/#sqlerror
 	static var UNKNOWN_ERR : Float;
 	static var DATABASE_ERR : Float;

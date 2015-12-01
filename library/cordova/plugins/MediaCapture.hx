@@ -94,7 +94,7 @@ typedef MediaFileData =
 }
 
 /** Encapsulates the error code resulting from a failed media capture operation. */
-typedef CaptureError =
+extern class CaptureError
 {
 	/**
 	 * One of the pre-defined error codes listed below.
@@ -111,10 +111,7 @@ typedef CaptureError =
 	 */
 	var code : Float;
 	var message : String;
-}
 
-declare var CaptureError:
-{
 	/** Constructor for CaptureError  */
 	function new(code:Float, message:String) : Void;
 	CAPTURE_INTERNAL_ERR : Float,
