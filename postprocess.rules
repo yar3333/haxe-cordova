@@ -36,17 +36,22 @@ ANY_CHARS = (?:.|[\n])*?
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+ADD_EVENT_LISTENER_TYPED = function\s*addEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;
+REMOVE_EVENT_LISTENER_TYPED = function\s*removeEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;
+ADD_EVENT_LISTENER = (?:MLCOMMENT)?\s*function addEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;
+REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;
+
 !^//[^\n]*(?:\n|\n//[^\n]*)*!!m
 
-/(extern interface Document\n\{[^}]*?\n\s*)function\s*addEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function addEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.addEventListener("$2", listener, useCapture);/r
-/(extern interface Document\n\{[^}]*?\n\s*)function\s*removeEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function removeEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.removeEventListener("$2", listener, useCapture);/r
-/(extern interface Document\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function addEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
-/(extern interface Document\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function removeEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
+/(extern interface Document\n\{[^}]*?\n\s*)ADD_EVENT_LISTENER_TYPED/$1static inline function addEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.addEventListener("$2", listener, useCapture);/r
+/(extern interface Document\n\{[^}]*?\n\s*)REMOVE_EVENT_LISTENER_TYPED/$1static inline function removeEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.removeEventListener("$2", listener, useCapture);/r
+/(extern interface Document\n\{[^}]*?\n)\s*ADD_EVENT_LISTENER\n/$1/
+/(extern interface Document\n\{[^}]*?\n)\s*REMOVE_EVENT_LISTENER\n/$1/
 
-/(extern interface Window\n\{[^}]*?\n\s*)function\s*addEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function addEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.addEventListener("$2", listener, useCapture);/r
-/(extern interface Window\n\{[^}]*?\n\s*)function\s*removeEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function removeEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.removeEventListener("$2", listener, useCapture);/r
-/(extern interface Window\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function addEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
-/(extern interface Window\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function removeEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
+/(extern interface Window\n\{[^}]*?\n\s*)ADD_EVENT_LISTENER_TYPED/$1static inline function addEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.addEventListener("$2", listener, useCapture);/r
+/(extern interface Window\n\{[^}]*?\n\s*)REMOVE_EVENT_LISTENER_TYPED/$1static inline function removeEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.removeEventListener("$2", listener, useCapture);/r
+/(extern interface Window\n\{[^}]*?\n)\s*ADD_EVENT_LISTENER\n/$1/
+/(extern interface Window\n\{[^}]*?\n)\s*REMOVE_EVENT_LISTENER\n/$1/
 
 // fix overloads
 //    1                2         3                           4                     5            6
