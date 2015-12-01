@@ -3,12 +3,12 @@
 DELETE_TYPES = Navigator
 
 CLASSES = Document|Window
-CLASSES = CLASSES|Cordova
-CLASSES = CLASSES|Camera
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
-CLASSES = CLASSES|Device
-CLASSES = CLASSES|Accelerometer
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
+
+STATIC = Cordova|Camera|Device|Accelerometer|Compass
+
+DYNAMIC = CordovaPlugins|WatchHandle
 
 VARS_INT = NONE
 
@@ -17,10 +17,6 @@ VARS_INT_ENDS = NONE
 METHODS_RETURN_INT = NONE
 
 THREE_ENUMS = NONE
-
-DYNAMIC = CordovaPlugins|WatchHandle
-
-STATIC = Cordova|Device|Accelerometer
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -106,7 +102,7 @@ REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:Stri
 
 /extern interface (ID)\b([^}]+?)\}\s*declare(?: var)? \1:\n\{/extern class $1$2/s
 
-/extern interface (CLASSES)\b/extern class $1/
+/extern interface (CLASSES|STATIC)\b/extern class $1/
 /extern interface (DELETE_TYPES)\n(?:BODY)//m
 
 /extern interface \b(DYNAMIC)\n(?:BODY)/typedef $1 = Dynamic;\n\n/
