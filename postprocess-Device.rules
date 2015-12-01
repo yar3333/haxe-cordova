@@ -1,0 +1,9 @@
+ID = [_a-zA-Z][_a-zA-Z0-9]*
+MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
+SLCOMMENT = \/\/[^\n]*
+COMMENTS = [ \t]*(?:MLCOMMENT|SLCOMMENT)(?:[ \t]*\n[ \t]*(?:MLCOMMENT|SLCOMMENT))*
+ANY_CHARS = (?:.|[\n])*?
+
+/(?:COMMENTS\n)?^declare var device : Device;\s*//m
+
+/extern class (Device)/@:noUsing\n@:native("window.device") extern class $1/
