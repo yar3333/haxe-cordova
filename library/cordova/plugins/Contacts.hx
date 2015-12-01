@@ -128,13 +128,13 @@ extern class ContactError
 declare ContactError:
 {
 	function new(code:Float) : ContactError;
-	UNKNOWN_ERROR : Float,
-	INVALID_ARGUMENT_ERROR : Float,
-	TIMEOUT_ERROR : Float,
-	PENDING_OPERATION_ERROR : Float,
-	IO_ERROR : Float,
-	NOT_SUPPORTED_ERROR : Float,
-	PERMISSION_DENIED_ERROR: Float;
+	static var UNKNOWN_ERROR : Float;
+	static var INVALID_ARGUMENT_ERROR : Float;
+	static var TIMEOUT_ERROR : Float;
+	static var PENDING_OPERATION_ERROR : Float;
+	static var IO_ERROR : Float;
+	static var NOT_SUPPORTED_ERROR : Float;
+	static var PERMISSION_DENIED_ERROR : Float;
 }
 
 /** Contains different kinds of information about a Contact object's name. */

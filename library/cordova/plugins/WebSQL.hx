@@ -97,12 +97,12 @@ typedef SqlError =
 declare SqlError:
 {
 	// Error code constants from http://www.w3.org/TR/webdatabase/#sqlerror
-	UNKNOWN_ERR : Float,
-	DATABASE_ERR : Float,
-	VERSION_ERR : Float,
-	TOO_LARGE_ERR : Float,
-	QUOTA_ERR : Float,
-	SYNTAX_ERR : Float,
-	CONSTRAINT_ERR : Float,
-	TIMEOUT_ERR : Float;
+	static var UNKNOWN_ERR : Float;
+	static var DATABASE_ERR : Float;
+	static var VERSION_ERR : Float;
+	static var TOO_LARGE_ERR : Float;
+	static var QUOTA_ERR : Float;
+	static var SYNTAX_ERR : Float;
+	static var CONSTRAINT_ERR : Float;
+	static var TIMEOUT_ERR : Float;
 }
