@@ -1,0 +1,1 @@
+/extern class (Compass)/@:noUsing\n@:native("window.navigator.compass") extern class $1/
