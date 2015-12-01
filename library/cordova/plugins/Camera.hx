@@ -1,19 +1,12 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
-
-extern interface Navigator
-{
-	/**
-	 * This plugin provides an API for taking pictures and for choosing images from the system's image library.
-	 */
-	var camera : Camera;
-}
 
 /**
  * This plugin provides an API for taking pictures and for choosing images from the system's image library.
  */
-extern interface Camera
+@:noUsing
+@:native("window.navigator.camera") extern class Camera
 {
 	/**
 	 * Removes intermediate photos taken by the camera from temporary storage.
@@ -41,7 +34,7 @@ extern interface Camera
 	//    ?cameraOptions:CameraOptions): CameraPopoverHandle;
 }
 
-extern interface CameraOptions
+typedef CameraOptions =
 {
 	/** Picture quality in range 0-100. Default is 50 */
 	@:optional var quality : Float;
@@ -108,7 +101,7 @@ extern interface CameraOptions
 /**
  * A handle to the popover dialog created by navigator.camera.getPicture. Used on iOS only.
  */
-extern interface CameraPopoverHandle
+typedef CameraPopoverHandle =
 {
 	/**
 	 * Set the position of the popover.
@@ -121,7 +114,7 @@ extern interface CameraPopoverHandle
  * iOS-only parameters that specify the anchor element location and arrow direction
  * of the popover when selecting images from an iPad's library or album.
  */
-extern interface CameraPopoverOptions
+typedef CameraPopoverOptions =
 {
 	var x : Float;
 	var y : Float;
@@ -139,44 +132,45 @@ extern interface CameraPopoverOptions
 	var arrowDir : Float;
 }
 
-declare var Camera:
+@:noUsing
+@:native("window.navigator.camera") extern class CameraConstants
 {
 	// Camera constants, defined in Camera plugin
-	DestinationType:
+	static var DestinationType :
 	{
 		DATA_URL : Float,
 		FILE_URI : Float,
 		NATIVE_URI: Float
-	}
-	Direction:
+	};
+	static var Direction :
 	{
 		BACK : Float,
 		FRONT : Float
-	}
-	EncodingType:
+	};
+	static var EncodingType :
 	{
 		JPEG : Float,
 		PNG : Float
-	}
-	MediaType:
+	};
+	static var MediaType :
 	{
 		PICTURE : Float,
 		VIDEO : Float,
 		ALLMEDIA : Float
-	}
-	PictureSourceType:
+	};
+	static var PictureSourceType :
 	{
 		PHOTOLIBRARY : Float,
 		CAMERA : Float,
 		SAVEDPHOTOALBUM : Float
-	}
+	};
 	// Used only on iOS
-	PopoverArrowDirection:
+	static var PopoverArrowDirection :
 	{
 		ARROW_UP : Float,
 		ARROW_DOWN : Float,
 		ARROW_LEFT : Float,
 		ARROW_RIGHT : Float,
 		ARROW_ANY : Float
-	}
-};
+	};
+}

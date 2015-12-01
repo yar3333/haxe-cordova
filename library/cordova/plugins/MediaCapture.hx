@@ -1,19 +1,14 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
-extern interface Navigator
-{
-	var device : Device;
-}
-
-extern interface Device
+typedef Device =
 {
 	var capture : Capture;
 }
 
 /** This plugin provides access to the device's audio, image, and video capture capabilities. */
-extern interface Capture
+typedef Capture =
 {
 	/**
 	 * Start the audio recorder application and return information about captured audio clip files.
@@ -60,7 +55,7 @@ extern interface Capture
 }
 
 /** Encapsulates properties of a media capture file. */
-extern interface MediaFile
+typedef MediaFile =
 {
 	/** The name of the file, without path information. */
 	var name : String;
@@ -83,7 +78,7 @@ extern interface MediaFile
 }
 
 /** Encapsulates format information about a media file. */
-extern interface MediaFileData
+typedef MediaFileData =
 {
 	/** The actual format of the audio and video content. */
 	var codecs : String;
@@ -98,7 +93,7 @@ extern interface MediaFileData
 }
 
 /** Encapsulates the error code resulting from a failed media capture operation. */
-extern interface CaptureError
+typedef CaptureError =
 {
 	/**
 	 * One of the pre-defined error codes listed below.
@@ -129,7 +124,7 @@ declare var CaptureError:
 }
 
 /** Encapsulates audio capture configuration options. */
-extern interface AudioOptions
+typedef AudioOptions =
 {
 	/**
 	 * The maximum number of audio clips the device's user can capture in a single
@@ -141,7 +136,7 @@ extern interface AudioOptions
 }
 
 /** Encapsulates image capture configuration options. */
-extern interface ImageOptions
+typedef ImageOptions =
 {
 	/**
 	 * The maximum number of images the user can capture in a single capture operation.
@@ -151,7 +146,7 @@ extern interface ImageOptions
 }
 
 /** Encapsulates video capture configuration options. */
-extern interface VideoOptions
+typedef VideoOptions =
 {
 	/**
 	 * The maximum number of video clips the device's user can capture in a single
@@ -163,7 +158,7 @@ extern interface VideoOptions
 }
 
 /** Encapsulates a set of media capture parameters that a device supports. */
-extern interface ConfigurationData
+typedef ConfigurationData =
 {
 	/** The ASCII-encoded lowercase string representing the media type. */
 	var type : String;

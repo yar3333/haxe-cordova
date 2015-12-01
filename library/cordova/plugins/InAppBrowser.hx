@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -46,8 +46,10 @@ extern class Window
  * The object returned from a call to window.open.
  * NOTE: The InAppBrowser window behaves like a standard web browser, and can't access Cordova APIs.
  */
-extern interface InAppBrowser extends Window
+typedef InAppBrowser =
 {
+	>Window,
+
 	var onloadstart : InAppBrowserEvent->Void;
 	var onloadstop : InAppBrowserEvent->Void;
 	var onloaderror : InAppBrowserEvent->Void;
@@ -205,7 +207,7 @@ extern interface InAppBrowser extends Window
 	function insertCSS(css: { file: String }, callback:Void->Void) : Void;
 }
 
-extern interface InAppBrowserEvent extends Event
+extern class InAppBrowserEvent extends Event
 {
 	/** the eventname, either loadstart, loadstop, loaderror, or exit. */
 	var type : String;

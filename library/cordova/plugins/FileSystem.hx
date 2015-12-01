@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -30,7 +30,7 @@ extern class Window
 }
 
 /** This interface represents a file system. */
-extern interface FileSystem
+typedef FileSystem =
 {
 	/* The name of the file system, unique across the list of exposed file systems. */
 	var name : String;
@@ -42,7 +42,7 @@ extern interface FileSystem
  * An abstract interface representing entries in a file system,
  * each of which may be a File or DirectoryEntry.
  */
-extern interface Entry
+typedef Entry =
 {
 	/** Entry is a file. */
 	var isFile : Bool;
@@ -127,7 +127,7 @@ extern interface Entry
 }
 
 /** This interface supplies information about the state of a file or directory. */
-extern interface Metadata
+typedef Metadata =
 {
 	/** This is the time at which the file or directory was last modified. */
 	var modificationTime : Date;
@@ -136,8 +136,10 @@ extern interface Metadata
 }
 
 /** This interface represents a directory on a file system. */
-extern interface DirectoryEntry extends Entry
+typedef DirectoryEntry =
 {
+	>Entry,
+
 	/**
 	 * Creates a new DirectoryReader to read Entries from this Directory.
 	 */
@@ -189,7 +191,7 @@ extern interface DirectoryEntry extends Entry
  * This dictionary is used to supply arguments to methods
  * that look up or create files or directories.
  */
-extern interface Flags
+typedef Flags =
 {
 	/** Used to indicate that the user wants to create a file or directory if it was not previously there. */
 	@:optional var create : Bool;
@@ -206,7 +208,7 @@ extern interface Flags
  *     If not all entries have been returned, the array produced by readEntries must not be empty.
  *     The entries produced by readEntries must not include the directory itself ["."] or its parent [".."].
  */
-extern interface DirectoryReader
+typedef DirectoryReader =
 {
 	/**
 	 * Read the next block of entries from this directory.
@@ -222,8 +224,10 @@ extern interface DirectoryReader
 }
 
 /** This interface represents a file on a file system. */
-extern interface FileEntry extends Entry
+typedef FileEntry =
 {
+	>Entry,
+
 	/**
 	 * Creates a new FileWriter associated with the file that this FileEntry represents.
 	 * @param successCallback A callback that is called with the new FileWriter.
@@ -244,8 +248,10 @@ extern interface FileEntry extends Entry
  * This interface provides methods to monitor the asynchronous writing of blobs
  * to disk using progress events and event handler attributes.
  */
-extern interface FileSaver extends EventTarget
+typedef FileSaver =
 {
+	>EventTarget,
+
 	/** Terminate file operation */
 	function abort() : Void;
 	/**
@@ -276,8 +282,10 @@ extern interface FileSaver extends EventTarget
  * This interface expands on the FileSaver interface to allow for multiple write
  * actions, rather than just saving a single Blob.
  */
-extern interface FileWriter extends FileSaver
+typedef FileWriter =
 {
+	>FileSaver,
+
 	/**
 	 * The byte offset at which the next write to the file will occur. This always less or equal than length.
 	 * A newly-created FileWriter will have position set to 0.
@@ -315,7 +323,7 @@ declare var FileWriter:
 	DONE: Float
 };
 
-extern interface FileError
+typedef FileError =
 {
 	/** Error code */
 	var code : Float;
@@ -341,7 +349,7 @@ declare FileError:
 /*
  * Constants defined in fileSystemPaths
  */
-extern interface Cordova
+extern class Cordova
 {
 	file:
 	{

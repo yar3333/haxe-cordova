@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -6,7 +6,7 @@ import js.html.*;
  * The FileTransfer object provides a way to upload files using an HTTP multi-part POST request,
  * and to download files as well.
  */
-extern interface FileTransfer
+typedef FileTransfer =
 {
 	/** Called with a ProgressEvent whenever a new chunk of data is transferred.  */
 	var onprogress : ProgressEvent->Void;
@@ -63,7 +63,7 @@ declare var FileTransfer:
 };
 
 /** A FileUploadResult object is passed to the success callback of the FileTransfer object's upload() method. */
-extern interface FileUploadResult
+typedef FileUploadResult =
 {
 	/** The number of bytes sent to the server as part of the upload. */
 	var bytesSent : Float;
@@ -76,7 +76,7 @@ extern interface FileUploadResult
 }
 
 /** Optional parameters for upload method. */
-extern interface FileUploadOptions
+typedef FileUploadOptions =
 {
 	/** The name of the form element. Defaults to file. */
 	@:optional var fileKey : String;
@@ -95,14 +95,14 @@ extern interface FileUploadOptions
 }
 
 /** Optional parameters for download method. */
-extern interface FileDownloadOptions
+typedef FileDownloadOptions =
 {
 	/** A map of header name/header values. */
 	@:optional var headers : {}
 }
 
 /** A FileTransferError object is passed to an error callback when an error occurs. */
-extern interface FileTransferError
+typedef FileTransferError =
 {
 	/**
 	 * One of the predefined error codes listed below.

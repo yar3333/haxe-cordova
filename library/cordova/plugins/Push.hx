@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -7,7 +7,7 @@ extern class Window
 	plugins: Plugins
 }
 
-extern interface Plugins
+typedef Plugins =
 {
 	/**
 	 * This plugin allows to receive push notifications. The Android implementation uses
@@ -22,7 +22,7 @@ extern interface Plugins
  * Google's GCM (Google Cloud Messaging) service,
  * whereas the iOS version is based on Apple APNS Notifications
  */
-extern interface PushNotification
+typedef PushNotification =
 {
 	/**
 	 * Registers as push notification receiver.
@@ -55,7 +55,7 @@ extern interface PushNotification
 }
 
 /** Options for registration process. */
-extern interface RegistrationOptions
+typedef RegistrationOptions =
 {
 	/** This is the Google project ID you need to obtain by registering your application for GCM. Android only */
 	@:optional var senderID : String;

@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -13,7 +13,7 @@ extern class Window
 /**
 * The StatusBar object provides some functions to customize the iOS and Android StatusBar.
 */
-extern interface StatusBar
+typedef StatusBar =
 {
 	/**
 	* On iOS 7, make the statusbar overlay or not overlay the WebView.
