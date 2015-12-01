@@ -6,7 +6,7 @@ CLASSES = Document|Window
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
 
-STATIC = Cordova|Camera|Device|Accelerometer|Compass
+STATIC = Cordova|Camera|Device|Accelerometer|Compass|Notification
 
 DYNAMIC = CordovaPlugins|WatchHandle
 

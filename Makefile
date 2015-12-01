@@ -13,6 +13,7 @@ library: native-ts FORCE
 	haxelib run refactor processFile library/cordova/plugins/Device.hx postprocess-Device.rules
 	haxelib run refactor processFile library/cordova/plugins/DeviceMotion.hx postprocess-DeviceMotion.rules
 	haxelib run refactor processFile library/cordova/plugins/DeviceOrientation.hx postprocess-DeviceOrientation.rules
+	haxelib run refactor processFile library/cordova/plugins/Dialogs.hx postprocess-Dialogs.rules
 	
 	haxelib run refactor replace library/cordova/plugins *.hx "%package cordova;%package cordova.plugins;%"
 	haxelib run refactor override library

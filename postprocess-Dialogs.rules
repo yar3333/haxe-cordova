@@ -1,0 +1,1 @@
+/extern class (Notification)\b/@:noUsing\n@:native("window.navigator.notification") extern class $1/
