@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova WebSQL plugin.
-// Project: https://github.com/MSOpenTech/cordova-plugin-websql
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Window =
+import js.html.*;
+
+extern class Window
 {
 	/**
 	 * Creates (opens, if exist) database with supplied parameters.
@@ -23,7 +19,7 @@ typedef Window =
 		?creationCallback:Database->Void) : Database;
 }
 
-typedef Database =
+extern interface Database
 {
 	/**
 	 * Starts new transaction.
@@ -59,7 +55,7 @@ declare var Database:
 		creationCallback:Database->Void) : Database;
 };
 
-typedef SqlTransaction =
+extern interface SqlTransaction
 {
 	/**
 	 * Executes SQL statement via current transaction.
@@ -79,20 +75,20 @@ declare SqlTransaction:
 	function new() : SqlTransaction;
 };
 
-typedef SqlResultSet =
+extern interface SqlResultSet
 {
 	var insertId : Float;
 	var rowsAffected : Float;
 	var rows : SqlResultSetRowList;
 }
 
-typedef SqlResultSetRowList =
+extern interface SqlResultSetRowList
 {
 	var length : Float;
 	function item(index:Float) : Dynamic;
 }
 
-typedef SqlError =
+extern interface SqlError
 {
 	var code : Float;
 	var message : String;

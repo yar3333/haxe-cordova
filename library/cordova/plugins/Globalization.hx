@@ -1,19 +1,15 @@
-// Type definitions for Apache Cordova Globalization plugin.
-// Project: https://github.com/apache/cordova-plugin-globalization
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/** This plugin obtains information and performs operations specific to the user's locale and timezone. */
 	globalization: Globalization
 }
 
 /** This plugin obtains information and performs operations specific to the user's locale and timezone. */
-typedef Globalization =
+extern interface Globalization
 {
 	/**
 	 * Get the string identifier for the client's current language.
@@ -168,7 +164,7 @@ typedef Globalization =
 }
 
 /** Date returned by stringToDate */
-typedef GlobalizationDate =
+extern interface GlobalizationDate
 {
 	/* The four digit year. */
 	var year : Float;
@@ -187,7 +183,7 @@ typedef GlobalizationDate =
 }
 
 /** Pattern to format and parse dates according to the client's user preferences.*/
-typedef GlobalizationDatePattern =
+extern interface GlobalizationDatePattern
 {
 	/* The date and time pattern to format and parse dates. The patterns follow Unicode Technical Standard #35. */
 	var pattern : String;
@@ -199,14 +195,14 @@ typedef GlobalizationDatePattern =
 	var dst_offset : Float;
 }
 
-typedef GlobalizationDateNameOptions =
+extern interface GlobalizationDateNameOptions
 {
 	@:optional var type : String;
 	@:optional var item : String;
 }
 
 /** Pattern to format and parse numbers according to the client's user preferences. */
-typedef GlobalizationNumberPattern =
+extern interface GlobalizationNumberPattern
 {
 	/* The number pattern to format and parse numbers. The patterns follow Unicode Technical Standard #35. */
 	var pattern : String;
@@ -230,7 +226,7 @@ typedef GlobalizationNumberPattern =
  * Pattern to format and parse currency values according
  * to the client's user preferences and ISO 4217 currency code.
  */
-typedef GlobalizationCurrencyPattern =
+extern interface GlobalizationCurrencyPattern
 {
 	/** The currency pattern to format and parse currency values. The patterns follow Unicode Technical Standard #35. */
 	var pattern : String;
@@ -247,7 +243,7 @@ typedef GlobalizationCurrencyPattern =
 }
 
 /** An object representing a error from the Globalization API. */
-typedef GlobalizationError =
+extern interface GlobalizationError
 {
 	/** One of the following codes representing the error type:
 	  * GlobalizationError.UNKNOWN_ERROR: 0

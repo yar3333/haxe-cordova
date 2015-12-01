@@ -8,8 +8,9 @@ library: native-ts FORCE
 	haxelib run refactor reindent library *.hx 4 4 4 4
 	haxelib run refactor process library *.hx postprocess.rules
 	haxelib run refactor processFile library/cordova/Cordova.hx postprocess-Cordova.rules
-	#haxelib run refactor processFile library/cordova/plugins/BatteryStatus.hx postprocess-BatteryStatus.rules
-	#haxelib run refactor override library
+	haxelib run refactor processFile library/cordova/plugins/BatteryStatus.hx postprocess-BatteryStatus.rules
+	haxelib run refactor override library
+	#cp -r manual/* library
 
 native-ts:
 	git init native-ts

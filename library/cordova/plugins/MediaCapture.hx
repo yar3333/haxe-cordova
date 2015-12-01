@@ -1,23 +1,19 @@
-// Type definitions for Apache Cordova MediaCapture plugin.
-// Project: https://github.com/apache/cordova-plugin-media-capture
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	var device : Device;
 }
 
-typedef Device =
+extern interface Device
 {
 	var capture : Capture;
 }
 
 /** This plugin provides access to the device's audio, image, and video capture capabilities. */
-typedef Capture =
+extern interface Capture
 {
 	/**
 	 * Start the audio recorder application and return information about captured audio clip files.
@@ -64,7 +60,7 @@ typedef Capture =
 }
 
 /** Encapsulates properties of a media capture file. */
-typedef MediaFile =
+extern interface MediaFile
 {
 	/** The name of the file, without path information. */
 	var name : String;
@@ -87,7 +83,7 @@ typedef MediaFile =
 }
 
 /** Encapsulates format information about a media file. */
-typedef MediaFileData =
+extern interface MediaFileData
 {
 	/** The actual format of the audio and video content. */
 	var codecs : String;
@@ -102,7 +98,7 @@ typedef MediaFileData =
 }
 
 /** Encapsulates the error code resulting from a failed media capture operation. */
-typedef CaptureError =
+extern interface CaptureError
 {
 	/**
 	 * One of the pre-defined error codes listed below.
@@ -133,7 +129,7 @@ declare var CaptureError:
 }
 
 /** Encapsulates audio capture configuration options. */
-typedef AudioOptions =
+extern interface AudioOptions
 {
 	/**
 	 * The maximum number of audio clips the device's user can capture in a single
@@ -145,7 +141,7 @@ typedef AudioOptions =
 }
 
 /** Encapsulates image capture configuration options. */
-typedef ImageOptions =
+extern interface ImageOptions
 {
 	/**
 	 * The maximum number of images the user can capture in a single capture operation.
@@ -155,7 +151,7 @@ typedef ImageOptions =
 }
 
 /** Encapsulates video capture configuration options. */
-typedef VideoOptions =
+extern interface VideoOptions
 {
 	/**
 	 * The maximum number of video clips the device's user can capture in a single
@@ -167,7 +163,7 @@ typedef VideoOptions =
 }
 
 /** Encapsulates a set of media capture parameters that a device supports. */
-typedef ConfigurationData =
+extern interface ConfigurationData
 {
 	/** The ASCII-encoded lowercase string representing the media type. */
 	var type : String;

@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova Network Information plugin.
-// Project: https://github.com/apache/cordova-plugin-network-information
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/**
 	 * This plugin provides an implementation of an old version of the Network Information API.
@@ -25,7 +21,7 @@ typedef Navigator =
 	}
 }
 
-typedef Document =
+extern class Document
 {
 	function addEventListener(type: "online", connectionStateCallback:Void->Dynamic, ?useCapture:Bool) : Void;
 	function addEventListener(type: "offline", connectionStateCallback:Void->Dynamic, ?useCapture:Bool) : Void;
@@ -35,7 +31,7 @@ typedef Document =
  * The connection object, exposed via navigator.connection, provides information
  * about the device's cellular and wifi connection.
  */
-typedef Connection =
+extern interface Connection
 {
 	/**
 	 * This property offers a fast way to determine the device's network connection state, and type of connection.
@@ -61,5 +57,5 @@ declare var Connection:
 	CELL_3G : Float,
 	CELL_4G : Float,
 	CELL : Float,
-	NONE : Float
+	NONE : Int
 }

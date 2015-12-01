@@ -1,10 +1,6 @@
-// Type definitions for Apache Cordova Media plugin.
-// Project: https://github.com/apache/cordova-plugin-media
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
+
+import js.html.*;
 
 declare var Media:
 {
@@ -14,7 +10,7 @@ declare var Media:
 		?mediaError:MediaError->Dynamic,
 		?mediaStatus:Float->Void) : Media;
 		//Media statuses
-		MEDIA_NONE : Float,
+		MEDIA_NONE : Int,
 		MEDIA_STARTING : Float,
 		MEDIA_RUNNING : Float,
 		MEDIA_PAUSED : Float,
@@ -27,7 +23,7 @@ declare var Media:
  * and is provided for convenience only. A future implementation will adhere to the latest
  * W3C specification and may deprecate the current APIs.
  */
-typedef Media =
+extern interface Media
 {
 	/**
 	 * Returns the current position within an audio file. Also updates the Media object's position parameter.

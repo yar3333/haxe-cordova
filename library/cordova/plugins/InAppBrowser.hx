@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova InAppBrowser plugin.
-// Project: https://github.com/apache/cordova-plugin-inappbrowser
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Window =
+import js.html.*;
+
+extern class Window
 {
 	/**
 	 * Opens a URL in a new InAppBrowser instance, the current browser instance, or the system browser.
@@ -50,10 +46,8 @@ typedef Window =
  * The object returned from a call to window.open.
  * NOTE: The InAppBrowser window behaves like a standard web browser, and can't access Cordova APIs.
  */
-typedef InAppBrowser =
+extern interface InAppBrowser extends Window
 {
-	>Window,
-
 	var onloadstart : InAppBrowserEvent->Void;
 	var onloadstop : InAppBrowserEvent->Void;
 	var onloaderror : InAppBrowserEvent->Void;
@@ -211,10 +205,8 @@ typedef InAppBrowser =
 	function insertCSS(css: { file: String }, callback:Void->Void) : Void;
 }
 
-typedef InAppBrowserEvent =
+extern interface InAppBrowserEvent extends Event
 {
-	>Event,
-
 	/** the eventname, either loadstart, loadstop, loaderror, or exit. */
 	var type : String;
 	/** the URL that was loaded. */

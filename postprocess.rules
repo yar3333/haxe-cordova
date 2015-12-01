@@ -1,5 +1,9 @@
 /////////////////////////////////// YOU CAN EDIT THIS ///////////////////////////////////
 
+#DELETE_TYPES =
+
+CLASSES = Document|Window
+
 VARS_INT = NONE
 
 VARS_INT_ENDS = NONE
@@ -22,23 +26,38 @@ FUNC_PREFIX = /((?:function\s+
 FUNC_TO_VAR = \s*\([^)]*\b)
 FUNC_VAR_TO_FLOAT = \s*:\s*)Float/$1Int/
 
+MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
+CALLB_TYPE = TYPE->TYPE(?:->TYPE)*
+BODY = \{[^}]*\}\s*
+ANY_CHARS = (?:.|[\n])*?
 
-/function\s*addEventListener\(type\s*:\s*"(ID)",\s*listener:Event->Dynamic,\s*\?useCapture:Bool\)\s*:\s*Void;/function addEventListener_$1(listener:Event->Dynamic, ?useCapture:Bool) : Void addEventListener("$1", listener, useCapture);/
-/function\s*removeEventListener\(type\s*:\s*"(ID)",\s*listener:Event->Dynamic,\s*\?useCapture:Bool\)\s*:\s*Void;/function removeEventListener_$1(listener:Event->Dynamic, ?useCapture:Bool) : Void removeEventListener("$1", listener, useCapture);/
+/////////////////////////////////////////////////////////////////////////////////////////
+
+!^//[^\n]*(?:\n|\n//[^\n]*)*!!m
+
+/(extern interface Document\n\{[^}]*?\n\s*)function\s*addEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function addEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.addEventListener("$2", listener, useCapture);/r
+/(extern interface Document\n\{[^}]*?\n\s*)function\s*removeEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function removeEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.removeEventListener("$2", listener, useCapture);/r
+/(extern interface Document\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function addEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
+/(extern interface Document\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function removeEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
+
+/(extern interface Window\n\{[^}]*?\n\s*)function\s*addEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function addEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.addEventListener("$2", listener, useCapture);/r
+/(extern interface Window\n\{[^}]*?\n\s*)function\s*removeEventListener\(type\s*:\s*"(ID)",\s*listener:(CALLB_TYPE),\s*\?useCapture:Bool\)\s*:\s*Void;/$1static inline function removeEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.removeEventListener("$2", listener, useCapture);/r
+/(extern interface Window\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function addEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
+/(extern interface Window\n\{[^}]*?\n)\s*(?:MLCOMMENT)?\s*function removeEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;\n/$1/
 
 // fix overloads
 //    1                2         3                           4                     5            6
 //\n([ \t]*)function\s+(ID)\s*\((.*?)\n\s*function\s+\2\s*\(([^)]*)\)\s*[:]\s*(TYPE_COMPLEX)\s*;(.*)$/\n$1@:overload(function($4):$5{})\n$1function $2($3$6/sr
 
 // package & native
-//^/package cordova;\n\nimport js.html.*;\n\n
+/^/package cordova;\n\nimport js.html.*;\n\n
 
 // Float => Int
-//(\b(?:VARS_INT)\s*:\s*)Float\b/$1Int/
-//(\b(?:VARS_INT)\s*:\s*)Array<Float>/$1Array<Int>/
-//((?:VARS_INT_ENDS)\s*:\s*)Float\b/$1Int/
-//((?:VARS_INT_ENDS)\s*:\s*)Array<Float>/$1Array<Int>/
-//(function\s+(?:METHODS_RETURN_INT)\s*\(\)\s*:\s*)Float\b/$1Int/
+/(\b(?:VARS_INT)\s*:\s*)Float\b/$1Int/
+/(\b(?:VARS_INT)\s*:\s*)Array<Float>/$1Array<Int>/
+/((?:VARS_INT_ENDS)\s*:\s*)Float\b/$1Int/
+/((?:VARS_INT_ENDS)\s*:\s*)Array<Float>/$1Array<Int>/
+/(function\s+(?:METHODS_RETURN_INT)\s*\(\)\s*:\s*)Float\b/$1Int/
 
 
 /////////////////////////////////// YOU CAN EDIT THIS ///////////////////////////////////
@@ -65,5 +84,6 @@ FUNC_VAR_TO_FLOAT = \s*:\s*)Float/$1Int/
 /////////////////////////////////////////////////////////////////////////////////////////
 // special fixes
 
-/extern\s+interface\s+(ID)\s+extends\s+(ID)\s*\{/typedef $1 =\n{\n\t>$2,\n/s
-/extern\s+interface\s+(ID)\s*\{/typedef $1 =\n{/
+/extern interface (CLASSES)/extern class $1/
+#/extern interface (DELETE_TYPES)\n(?:BODY)//m
+

@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova Device Orientation plugin.
-// Project: https://github.com/apache/cordova-plugin-device-orientation
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license. 
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/** 
 	 * This plugin provides access to the device's compass. The compass is a sensor that detects
@@ -21,7 +17,7 @@ typedef Navigator =
  * the direction or heading that the device is pointed, typically from the top of the device.
  * It measures the heading in degrees from 0 to 359.99, where 0 is north.
  */
-typedef Compass =
+extern interface Compass
 {
 	/**
 	 * Get the current compass heading. The compass heading is returned via a CompassHeading
@@ -54,7 +50,7 @@ typedef Compass =
 }
 
 /** A CompassHeading object is returned to the compassSuccess callback function. */
-typedef CompassHeading =
+extern interface CompassHeading
 {
 	/** The heading in degrees from 0-359.99 at a single moment in time. */
 	var magneticHeading : Float;
@@ -66,14 +62,14 @@ typedef CompassHeading =
 	var timestamp : Float;
 }
 
-typedef CompassOptions =
+extern interface CompassOptions
 {
 	@:optional var filter : Float;
 	@:optional var frequency : Float;
 }
 
 /** A CompassError object is returned to the onError callback function when an error occurs. */
-typedef CompassError =
+extern interface CompassError
 {
 	/**
 	 * One of the predefined error codes

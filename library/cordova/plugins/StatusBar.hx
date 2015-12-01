@@ -1,12 +1,11 @@
-// Type definitions for Apache Cordova StatusBar plugin.
-// Project: https://github.com/apache/cordova-plugin-statusbar
-// Definitions by: Xinkai Chen <https://github.com/Xinkai>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
+package cordova;
+
+import js.html.*;
 
 /**
 * Global object StatusBar.
 */
-typedef Window =
+extern class Window
 {
 	var StatusBar : StatusBar;
 }
@@ -14,7 +13,7 @@ typedef Window =
 /**
 * The StatusBar object provides some functions to customize the iOS and Android StatusBar.
 */
-typedef StatusBar =
+extern interface StatusBar
 {
 	/**
 	* On iOS 7, make the statusbar overlay or not overlay the WebView.

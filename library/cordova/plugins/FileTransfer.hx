@@ -1,18 +1,12 @@
-// Type definitions for Apache Cordova FileTransfer plugin.
-// Project: https://github.com/apache/cordova-plugin-file-transfer
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-/// <reference path="FileSystem.d.ts"/>
+import js.html.*;
 
 /**
  * The FileTransfer object provides a way to upload files using an HTTP multi-part POST request,
  * and to download files as well.
  */
-typedef FileTransfer =
+extern interface FileTransfer
 {
 	/** Called with a ProgressEvent whenever a new chunk of data is transferred.  */
 	var onprogress : ProgressEvent->Void;
@@ -69,7 +63,7 @@ declare var FileTransfer:
 };
 
 /** A FileUploadResult object is passed to the success callback of the FileTransfer object's upload() method. */
-typedef FileUploadResult =
+extern interface FileUploadResult
 {
 	/** The number of bytes sent to the server as part of the upload. */
 	var bytesSent : Float;
@@ -82,7 +76,7 @@ typedef FileUploadResult =
 }
 
 /** Optional parameters for upload method. */
-typedef FileUploadOptions =
+extern interface FileUploadOptions
 {
 	/** The name of the form element. Defaults to file. */
 	@:optional var fileKey : String;
@@ -101,14 +95,14 @@ typedef FileUploadOptions =
 }
 
 /** Optional parameters for download method. */
-typedef FileDownloadOptions =
+extern interface FileDownloadOptions
 {
 	/** A map of header name/header values. */
 	@:optional var headers : {}
 }
 
 /** A FileTransferError object is passed to an error callback when an error occurs. */
-typedef FileTransferError =
+extern interface FileTransferError
 {
 	/**
 	 * One of the predefined error codes listed below.
