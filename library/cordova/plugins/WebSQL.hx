@@ -104,5 +104,5 @@ declare SqlError:
 	QUOTA_ERR : Float,
 	SYNTAX_ERR : Float,
 	CONSTRAINT_ERR : Float,
-	TIMEOUT_ERR : Float
+	TIMEOUT_ERR : Float;
 }

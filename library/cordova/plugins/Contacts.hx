@@ -33,7 +33,7 @@ extern class Contacts
 	 * @param onError Error callback function, invoked when an error occurs.
 	 */
 	function pickContact(onSuccess:Contact->Void,
-		onError:ContactError->Void) : Void
+		onError:ContactError->Void) : Void;
 }
 
 extern class ContactProperties
@@ -113,7 +113,7 @@ declare var Contact:
 		?note:String,
 		?photos:Array<ContactField>,
 		?categories:ContactField,
-		?urls:Array<ContactField>) : Contact
+		?urls:Array<ContactField>) : Contact;
 }
 
 /** The ContactError object is returned to the user through the contactError callback function when an error occurs. */
@@ -134,7 +134,7 @@ declare ContactError:
 	PENDING_OPERATION_ERROR : Float,
 	IO_ERROR : Float,
 	NOT_SUPPORTED_ERROR : Float,
-	PERMISSION_DENIED_ERROR: Float
+	PERMISSION_DENIED_ERROR: Float;
 }
 
 /** Contains different kinds of information about a Contact object's name. */
@@ -162,7 +162,7 @@ declare ContactName:
 		?givenName:String,
 		?middleName:String,
 		?honorificPrefix:String,
-		?honorificSuffix:String) : ContactName
+		?honorificSuffix:String) : ContactName;
 }
 
 /**
@@ -192,7 +192,7 @@ declare ContactField:
 	/** Constructor for ContactField object */
 	function new(?type:String,
 		?value:String,
-		?pref:Bool) : ContactField
+		?pref:Bool) : ContactField;
 }
 
 /**
@@ -229,7 +229,7 @@ declare ContactAddress:
 		?locality:String,
 		?region:String,
 		?postalCode:String,
-		?country:String) : ContactAddress
+		?country:String) : ContactAddress;
 }
 
 /**
@@ -257,7 +257,7 @@ declare ContactOrganization:
 		?type:String,
 		?name:String,
 		?department:String,
-		?title:String) : ContactOrganization
+		?title:String) : ContactOrganization;
 }
 
 /** Search options to filter navigator.contacts.  */
@@ -276,5 +276,5 @@ declare ContactFindOptions:
 	/** Constructor for ContactFindOptions object */
 	function new(?filter:String,
 		?multiple:Bool,
-		?desiredFields:Array<String>) : ContactFindOptions
+		?desiredFields:Array<String>) : ContactFindOptions;
 }

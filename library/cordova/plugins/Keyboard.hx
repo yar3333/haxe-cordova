@@ -166,7 +166,7 @@ typedef Keyboard =
 	 * </code>
 	 *
 	 */
-	function onhiding() : Void
+	function onhiding() : Void;
 }
 
 declare var Keyboard : Keyboard;

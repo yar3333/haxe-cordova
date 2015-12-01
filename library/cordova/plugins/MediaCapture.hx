@@ -120,7 +120,7 @@ declare var CaptureError:
 	CAPTURE_APPLICATION_BUSY : Float,
 	CAPTURE_INVALID_ARGUMENT : Float,
 	CAPTURE_NO_MEDIA_FILES : Float,
-	CAPTURE_NOT_SUPPORTED : Float
+	CAPTURE_NOT_SUPPORTED : Float;
 }
 
 /** Encapsulates audio capture configuration options. */

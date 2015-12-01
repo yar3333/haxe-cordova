@@ -14,7 +14,7 @@ declare var Media:
 		MEDIA_STARTING : Float,
 		MEDIA_RUNNING : Float,
 		MEDIA_PAUSED : Float,
-		MEDIA_STOPPED: Float
+		MEDIA_STOPPED: Float;
 }
 
 /**

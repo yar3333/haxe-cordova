@@ -4,7 +4,7 @@ import js.html.*;
 
 extern class Window
 {
-	plugins: Plugins
+	plugins: Plugins;
 }
 
 typedef Plugins =
@@ -14,7 +14,7 @@ typedef Plugins =
 	 * Google's GCM (Google Cloud Messaging) service,
 	 * whereas the iOS version is based on Apple APNS Notifications
 	 */
-	pushNotification: PushNotification
+	pushNotification: PushNotification;
 }
 
 /**
@@ -65,6 +65,6 @@ typedef RegistrationOptions =
 	@:optional var ecb : String;
 	@:optional var badge : Bool;
 	@:optional var sound : Bool;
-	?alert:Bool
+	?alert:Bool;
 }
 

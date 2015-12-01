@@ -320,7 +320,7 @@ declare var FileWriter:
 {
 	INIT : Float,
 	WRITING : Float,
-	DONE: Float
+	DONE: Float;
 }
 
 typedef FileError =
@@ -343,7 +343,7 @@ declare FileError:
 	INVALID_MODIFICATION_ERR : Float,
 	QUOTA_EXCEEDED_ERR : Float,
 	TYPE_MISMATCH_ERR : Float,
-	PATH_EXISTS_ERR : Float
+	PATH_EXISTS_ERR : Float;
 }
 
 /*
@@ -377,6 +377,6 @@ extern class Cordova
 		documentsDirectory : String,
 		/* BlackBerry10: Files globally available to all apps */
 		sharedDirectory: String
-	}
+	};
 }
 

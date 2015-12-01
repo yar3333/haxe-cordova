@@ -74,5 +74,5 @@ declare var CompassError:
 	/** Constructor for CompassError object */
 	function new(code:Float) : CompassError;
 	COMPASS_INTERNAL_ERR : Float,
-	COMPASS_NOT_SUPPORTED: Float
+	COMPASS_NOT_SUPPORTED: Float;
 }
