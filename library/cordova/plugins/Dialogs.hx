@@ -1,5 +1,6 @@
 package cordova.plugins;
 
+import js.*;
 import js.html.*;
 
 /** This plugin provides access to some native dialog UI elements. */

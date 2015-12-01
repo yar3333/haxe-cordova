@@ -1,5 +1,6 @@
 package cordova.plugins;
 
+import js.*;
 import js.html.*;
 
 /** This plugin obtains information and performs operations specific to the user's locale and timezone. */

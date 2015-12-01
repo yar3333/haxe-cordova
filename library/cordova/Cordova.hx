@@ -1,5 +1,6 @@
 package cordova;
 
+import js.*;
 import js.html.*;
 
 @:noUsing
