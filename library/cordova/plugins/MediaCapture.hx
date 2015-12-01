@@ -3,9 +3,9 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-typedef Device =
+extern class Device
 {
-	var capture : Capture;
+	static var capture : Capture;
 }
 
 /** This plugin provides access to the device's audio, image, and video capture capabilities. */
