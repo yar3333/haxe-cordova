@@ -172,5 +172,5 @@ typedef CameraPopoverOptions =
 		ARROW_LEFT : Float,
 		ARROW_RIGHT : Float,
 		ARROW_ANY : Float
-	}
+	};
 }

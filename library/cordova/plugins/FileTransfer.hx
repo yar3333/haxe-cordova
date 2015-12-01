@@ -98,7 +98,7 @@ typedef FileUploadOptions =
 typedef FileDownloadOptions =
 {
 	/** A map of header name/header values. */
-	@:optional var headers : {}
+	@:optional var headers : {};
 }
 
 /** A FileTransferError object is passed to an error callback when an error occurs. */
@@ -133,5 +133,5 @@ declare FileTransferError:
 	INVALID_URL_ERR : Float,
 	CONNECTION_ERR : Float,
 	ABORT_ERR : Float,
-	NOT_MODIFIED_ERR : Float
+	NOT_MODIFIED_ERR : Float;
 }

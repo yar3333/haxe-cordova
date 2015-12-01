@@ -28,7 +28,7 @@ typedef Connection =
 	 *     Connection.CELL
 	 *     Connection.NONE
 	 */
-	type: Float
+	type: Float;
 }
 
 declare var Connection:
@@ -40,5 +40,5 @@ declare var Connection:
 	CELL_3G : Float,
 	CELL_4G : Float,
 	CELL : Float,
-	NONE : Int
+	NONE : Int;
 }

@@ -256,5 +256,5 @@ declare var GlobalizationError:
 	UNKNOWN_ERROR : Float,
 	FORMATTING_ERROR : Float,
 	PARSING_ERROR : Float,
-	PATTERN_ERROR : Float
+	PATTERN_ERROR : Float;
 }
