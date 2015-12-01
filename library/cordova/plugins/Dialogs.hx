@@ -1,19 +1,15 @@
-// Type definitions for Apache Cordova Dialogs plugin.
-// Project: https://github.com/apache/cordova-plugin-dialogs
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license. 
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/** This plugin provides access to some native dialog UI elements. */
 	notification: Notification
 }
 
 /** This plugin provides access to some native dialog UI elements. */
-typedef Notification =
+extern interface Notification
 {
 	/**
 	 * Shows a custom alert or dialog box. Most Cordova implementations use a native dialog box for this feature,
@@ -60,7 +56,7 @@ typedef Notification =
 }
 
 /** Object, passed to promptCallback */
-typedef NotificationPromptResult =
+extern interface NotificationPromptResult
 {
 	/**
 	 * The index of the pressed button. Note that the index uses one-based indexing, so the value is 1, 2, 3, etc.

@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova Camera plugin.
-// Project: https://github.com/apache/cordova-plugin-camera
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/**
 	 * This plugin provides an API for taking pictures and for choosing images from the system's image library.
@@ -17,7 +13,7 @@ typedef Navigator =
 /**
  * This plugin provides an API for taking pictures and for choosing images from the system's image library.
  */
-typedef Camera =
+extern interface Camera
 {
 	/**
 	 * Removes intermediate photos taken by the camera from temporary storage.
@@ -45,7 +41,7 @@ typedef Camera =
 	//    ?cameraOptions:CameraOptions): CameraPopoverHandle;
 }
 
-typedef CameraOptions =
+extern interface CameraOptions
 {
 	/** Picture quality in range 0-100. Default is 50 */
 	@:optional var quality : Float;
@@ -112,7 +108,7 @@ typedef CameraOptions =
 /**
  * A handle to the popover dialog created by navigator.camera.getPicture. Used on iOS only.
  */
-typedef CameraPopoverHandle =
+extern interface CameraPopoverHandle
 {
 	/**
 	 * Set the position of the popover.
@@ -125,7 +121,7 @@ typedef CameraPopoverHandle =
  * iOS-only parameters that specify the anchor element location and arrow direction
  * of the popover when selecting images from an iPad's library or album.
  */
-typedef CameraPopoverOptions =
+extern interface CameraPopoverOptions
 {
 	var x : Float;
 	var y : Float;

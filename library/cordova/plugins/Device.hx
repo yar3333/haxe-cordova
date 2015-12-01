@@ -1,16 +1,12 @@
-// Type definitions for Apache Cordova Device plugin.
-// Project: https://github.com/apache/cordova-plugin-device
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license. 
+package cordova;
+
+import js.html.*;
 
 /**
  * This plugin defines a global device object, which describes the device's hardware and software.
  * Although the object is in the global scope, it is not available until after the deviceready event.
  */
-typedef Device =
+extern interface Device
 {
 	/** Get the version of Cordova running on the device. */
 	var cordova : String;

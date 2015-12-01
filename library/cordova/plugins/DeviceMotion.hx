@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova Device Motion plugin.
-// Project: https://github.com/apache/cordova-plugin-device-motion
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/**
 	 * This plugin provides access to the device's accelerometer. The accelerometer is a motion sensor
@@ -21,7 +17,7 @@ typedef Navigator =
  * that detects the change (delta) in movement relative to the current device orientation,
  * in three dimensions along the x, y, and z axis.
  */
-typedef Accelerometer =
+extern interface Accelerometer
 {
 	/**
 	 * Stop watching the Acceleration referenced by the watchID parameter.
@@ -58,7 +54,7 @@ typedef Accelerometer =
  * the effect of gravity (9.81 m/s^2), so that when a device lies flat and facing up, x, y, and z
  * values returned should be 0, 0, and 9.81.
  */
-typedef Acceleration =
+extern interface Acceleration
 {
 	/** Amount of acceleration on the x-axis. (in m/s^2) */
 	var x : Float;
@@ -71,12 +67,12 @@ typedef Acceleration =
 }
 
 /** Object with options for watchAcceleration */
-typedef AccelerometerOptions =
+extern interface AccelerometerOptions
 {
 	/** How often to retrieve the Acceleration in milliseconds. (Default: 10000) */
 	@:optional var frequency : Float;
 }
 
 /** Abstract type for watch IDs used by Accelerometer. Values of these type are actually `number` at runtime.*/
-typedef WatchHandle =
+extern interface WatchHandle
 { }

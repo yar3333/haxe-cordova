@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova Vibration plugin.
-// Project: https://github.com/apache/cordova-plugin-vibration
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>, Louis Lagrange <https://github.com/Minishlink/>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-//
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/**
 	 * Vibrates the device for the specified amount of time.
@@ -21,7 +17,7 @@ typedef Navigator =
 	function vibrate(time:Array<Float>) : Void;
 }
 
-typedef Notification =
+extern interface Notification
 {
 	/**
 	 * Vibrates the device for the specified amount of time.

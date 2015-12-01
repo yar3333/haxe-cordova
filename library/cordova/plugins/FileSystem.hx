@@ -1,12 +1,8 @@
-// Type definitions for Apache Cordova File System plugin.
-// Project: https://github.com/apache/cordova-plugin-file
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Window =
+import js.html.*;
+
+extern class Window
 {
 	/**
 	 * Requests a filesystem in which to store application data.
@@ -34,7 +30,7 @@ typedef Window =
 }
 
 /** This interface represents a file system. */
-typedef FileSystem =
+extern interface FileSystem
 {
 	/* The name of the file system, unique across the list of exposed file systems. */
 	var name : String;
@@ -46,7 +42,7 @@ typedef FileSystem =
  * An abstract interface representing entries in a file system,
  * each of which may be a File or DirectoryEntry.
  */
-typedef Entry =
+extern interface Entry
 {
 	/** Entry is a file. */
 	var isFile : Bool;
@@ -131,7 +127,7 @@ typedef Entry =
 }
 
 /** This interface supplies information about the state of a file or directory. */
-typedef Metadata =
+extern interface Metadata
 {
 	/** This is the time at which the file or directory was last modified. */
 	var modificationTime : Date;
@@ -140,10 +136,8 @@ typedef Metadata =
 }
 
 /** This interface represents a directory on a file system. */
-typedef DirectoryEntry =
+extern interface DirectoryEntry extends Entry
 {
-	>Entry,
-
 	/**
 	 * Creates a new DirectoryReader to read Entries from this Directory.
 	 */
@@ -195,7 +189,7 @@ typedef DirectoryEntry =
  * This dictionary is used to supply arguments to methods
  * that look up or create files or directories.
  */
-typedef Flags =
+extern interface Flags
 {
 	/** Used to indicate that the user wants to create a file or directory if it was not previously there. */
 	@:optional var create : Bool;
@@ -212,7 +206,7 @@ typedef Flags =
  *     If not all entries have been returned, the array produced by readEntries must not be empty.
  *     The entries produced by readEntries must not include the directory itself ["."] or its parent [".."].
  */
-typedef DirectoryReader =
+extern interface DirectoryReader
 {
 	/**
 	 * Read the next block of entries from this directory.
@@ -228,10 +222,8 @@ typedef DirectoryReader =
 }
 
 /** This interface represents a file on a file system. */
-typedef FileEntry =
+extern interface FileEntry extends Entry
 {
-	>Entry,
-
 	/**
 	 * Creates a new FileWriter associated with the file that this FileEntry represents.
 	 * @param successCallback A callback that is called with the new FileWriter.
@@ -252,10 +244,8 @@ typedef FileEntry =
  * This interface provides methods to monitor the asynchronous writing of blobs
  * to disk using progress events and event handler attributes.
  */
-typedef FileSaver =
+extern interface FileSaver extends EventTarget
 {
-	>EventTarget,
-
 	/** Terminate file operation */
 	function abort() : Void;
 	/**
@@ -286,10 +276,8 @@ typedef FileSaver =
  * This interface expands on the FileSaver interface to allow for multiple write
  * actions, rather than just saving a single Blob.
  */
-typedef FileWriter =
+extern interface FileWriter extends FileSaver
 {
-	>FileSaver,
-
 	/**
 	 * The byte offset at which the next write to the file will occur. This always less or equal than length.
 	 * A newly-created FileWriter will have position set to 0.
@@ -327,7 +315,7 @@ declare var FileWriter:
 	DONE: Float
 };
 
-typedef FileError =
+extern interface FileError
 {
 	/** Error code */
 	var code : Float;
@@ -353,7 +341,7 @@ declare FileError:
 /*
  * Constants defined in fileSystemPaths
  */
-typedef Cordova =
+extern interface Cordova
 {
 	file:
 	{

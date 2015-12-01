@@ -1,18 +1,14 @@
-// Type definitions for Apache Cordova Contacts plugin.
-// Project: https://github.com/apache/cordova-plugin-contacts
-// Definitions by: Microsoft Open Technologies, Inc. <http://msopentech.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-// 
-// Copyright (c) Microsoft Open Technologies, Inc.
-// Licensed under the MIT license.
+package cordova;
 
-typedef Navigator =
+import js.html.*;
+
+extern interface Navigator
 {
 	/** Provides access to the device contacts database. */
 	var contacts : Contacts;
 }
 
-typedef Contacts =
+extern interface Contacts
 {
 	/**
 	 * The navigator.contacts.create method is synchronous, and returns a new Contact object.
@@ -46,7 +42,7 @@ typedef Contacts =
 		onError:ContactError->Void) : Void
 }
 
-typedef ContactProperties =
+extern interface ContactProperties
 {
 	/** A globally unique identifier. */
 	@:optional var id : String;
@@ -83,10 +79,8 @@ typedef ContactProperties =
  * from the device contacts database. Contacts can also be retrieved (individually or in bulk)
  * from the database by invoking the navigator.contacts.find method.
  */
-typedef Contact =
+extern interface Contact extends ContactProperties
 {
-	>ContactProperties,
-
 	/**
 	 * Returns a new Contact object that is a deep copy of the calling object, with the id property set to null
 	 */
@@ -129,7 +123,7 @@ declare var Contact:
 };
 
 /** The ContactError object is returned to the user through the contactError callback function when an error occurs. */
-typedef ContactError =
+extern interface ContactError
 {
 	/** Error code */
 	var code : Float;
@@ -150,7 +144,7 @@ declare ContactError:
 };
 
 /** Contains different kinds of information about a Contact object's name. */
-typedef ContactName =
+extern interface ContactName
 {
 	/** The complete name of the contact. */
 	@:optional var formatted : String;
@@ -189,7 +183,7 @@ declare ContactName:
  * url when the value attribute contains a URL to the photo image, or base64 when the value
  * contains a base64-encoded image string.
  */
-typedef ContactField =
+extern interface ContactField
 {
 	/** A string that indicates what type of field this is, home for example. */
 	var type : String;
@@ -211,7 +205,7 @@ declare ContactField:
  * The ContactAddress object stores the properties of a single address of a contact.
  * A Contact object may include more than one address in a ContactAddress[] array.
  */
-typedef ContactAddress =
+extern interface ContactAddress
 {
 	/** Set to true if this ContactAddress contains the user's preferred value. */
 	@:optional var pref : Bool;
@@ -248,7 +242,7 @@ declare ContactAddress:
  * The ContactOrganization object stores a contact's organization properties. A Contact object stores
  * one or more ContactOrganization objects in an array.
  */
-typedef ContactOrganization =
+extern interface ContactOrganization
 {
 	/** Set to true if this ContactOrganization contains the user's preferred value. */
 	@:optional var pref : Bool;
@@ -273,7 +267,7 @@ declare ContactOrganization:
 };
 
 /** Search options to filter navigator.contacts.  */
-typedef ContactFindOptions =
+extern interface ContactFindOptions
 {
 	/** The search string used to find navigator.contacts. */
 	@:optional var filter : String;
