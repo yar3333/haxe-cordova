@@ -1,15 +1,9 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
-extern interface Navigator
-{
-	/** This plugin obtains information and performs operations specific to the user's locale and timezone. */
-	globalization: Globalization
-}
-
 /** This plugin obtains information and performs operations specific to the user's locale and timezone. */
-extern interface Globalization
+typedef Globalization =
 {
 	/**
 	 * Get the string identifier for the client's current language.
@@ -164,7 +158,7 @@ extern interface Globalization
 }
 
 /** Date returned by stringToDate */
-extern interface GlobalizationDate
+typedef GlobalizationDate =
 {
 	/* The four digit year. */
 	var year : Float;
@@ -183,7 +177,7 @@ extern interface GlobalizationDate
 }
 
 /** Pattern to format and parse dates according to the client's user preferences.*/
-extern interface GlobalizationDatePattern
+typedef GlobalizationDatePattern =
 {
 	/* The date and time pattern to format and parse dates. The patterns follow Unicode Technical Standard #35. */
 	var pattern : String;
@@ -195,14 +189,14 @@ extern interface GlobalizationDatePattern
 	var dst_offset : Float;
 }
 
-extern interface GlobalizationDateNameOptions
+typedef GlobalizationDateNameOptions =
 {
 	@:optional var type : String;
 	@:optional var item : String;
 }
 
 /** Pattern to format and parse numbers according to the client's user preferences. */
-extern interface GlobalizationNumberPattern
+typedef GlobalizationNumberPattern =
 {
 	/* The number pattern to format and parse numbers. The patterns follow Unicode Technical Standard #35. */
 	var pattern : String;
@@ -226,7 +220,7 @@ extern interface GlobalizationNumberPattern
  * Pattern to format and parse currency values according
  * to the client's user preferences and ISO 4217 currency code.
  */
-extern interface GlobalizationCurrencyPattern
+typedef GlobalizationCurrencyPattern =
 {
 	/** The currency pattern to format and parse currency values. The patterns follow Unicode Technical Standard #35. */
 	var pattern : String;
@@ -243,7 +237,7 @@ extern interface GlobalizationCurrencyPattern
 }
 
 /** An object representing a error from the Globalization API. */
-extern interface GlobalizationError
+typedef GlobalizationError =
 {
 	/** One of the following codes representing the error type:
 	  * GlobalizationError.UNKNOWN_ERROR: 0

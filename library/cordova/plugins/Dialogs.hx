@@ -1,15 +1,9 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
-extern interface Navigator
-{
-	/** This plugin provides access to some native dialog UI elements. */
-	notification: Notification
-}
-
 /** This plugin provides access to some native dialog UI elements. */
-extern interface Notification
+typedef Notification =
 {
 	/**
 	 * Shows a custom alert or dialog box. Most Cordova implementations use a native dialog box for this feature,
@@ -56,7 +50,7 @@ extern interface Notification
 }
 
 /** Object, passed to promptCallback */
-extern interface NotificationPromptResult
+typedef NotificationPromptResult =
 {
 	/**
 	 * The index of the pressed button. Note that the index uses one-based indexing, so the value is 1, 2, 3, etc.

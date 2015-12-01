@@ -3,19 +3,10 @@ MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
 SLCOMMENT = \/\/[^\n]*
 COMMENTS = [ \t]*(?:MLCOMMENT|SLCOMMENT)(?:[ \t]*\n[ \t]*(?:MLCOMMENT|SLCOMMENT))*
 ANY_CHARS = (?:.|[\n])*?
-BODY = \{[^}]*\}\s*
 
 /(?:COMMENTS\n)?^declare var cordova : Cordova;\s*//m
 /(?:COMMENTS\n)?^declare module 'ID'\s*\{ANY_CHARS\}\s*//m
 
-/extern interface CordovaPlugins\n(?:BODY)/typedef CordovaPlugins = Dynamic;\n\n/
-
-/(extern interface Cordova\n\{[^}]*\n\s*)function /$1static function /r
-/(extern interface Cordova\n\{[^}]*\n\s*)var /$1static var /r
-
-/extern interface Cordova/@:noUsing\n@:native("window.cordova") extern class Cordova/
+/extern class Cordova/@:noUsing\n@:native("window.cordova") extern class Cordova/
 
 /function makeAbsolute\(url:String\) : String\n/function makeAbsolute(url:String) : String;\n/
-
-/extern\s+interface\s+(ID)\s+extends\s+(ID)\s*\{/typedef $1 =\n{\n\t>$2,\n/s
-/extern\s+interface\s+(ID)\s*\{/typedef $1 =\n{/

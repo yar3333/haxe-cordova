@@ -1,0 +1,16 @@
+AFTER_TYPE = :(\n\s*\{[^}]*\})
+
+/extern class (Camera\b)/@:noUsing\n@:native("window.navigator.camera") extern class $1/
+
+/declare var (Camera):/@:noUsing\n@:native("window.navigator.camera") extern class $1Constants/
+
+/\b(DestinationType)AFTER_TYPE/static var $1 :$2;/
+/\b(Direction)AFTER_TYPE/static var $1 :$2;/
+/\b(EncodingType)AFTER_TYPE/static var $1 :$2;/
+/\b(MediaType)AFTER_TYPE/static var $1 :$2;/
+/\b(MediaType)AFTER_TYPE/static var $1 :$2;/
+/\b(PictureSourceType)AFTER_TYPE/static var $1 :$2;/
+/\b(PopoverArrowDirection)AFTER_TYPE/static var $1 :$2;/
+
+
+/};\s*$/}\n/s

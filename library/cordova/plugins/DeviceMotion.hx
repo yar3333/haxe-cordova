@@ -1,23 +1,13 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
-
-extern interface Navigator
-{
-	/**
-	 * This plugin provides access to the device's accelerometer. The accelerometer is a motion sensor
-	 * that detects the change (delta) in movement relative to the current device orientation,
-	 * in three dimensions along the x, y, and z axis.
-	 */
-	var accelerometer : Accelerometer;
-}
 
 /**
  * This plugin provides access to the device's accelerometer. The accelerometer is a motion sensor
  * that detects the change (delta) in movement relative to the current device orientation,
  * in three dimensions along the x, y, and z axis.
  */
-extern interface Accelerometer
+typedef Accelerometer =
 {
 	/**
 	 * Stop watching the Acceleration referenced by the watchID parameter.
@@ -54,7 +44,7 @@ extern interface Accelerometer
  * the effect of gravity (9.81 m/s^2), so that when a device lies flat and facing up, x, y, and z
  * values returned should be 0, 0, and 9.81.
  */
-extern interface Acceleration
+typedef Acceleration =
 {
 	/** Amount of acceleration on the x-axis. (in m/s^2) */
 	var x : Float;
@@ -67,12 +57,12 @@ extern interface Acceleration
 }
 
 /** Object with options for watchAcceleration */
-extern interface AccelerometerOptions
+typedef AccelerometerOptions =
 {
 	/** How often to retrieve the Acceleration in milliseconds. (Default: 10000) */
 	@:optional var frequency : Float;
 }
 
 /** Abstract type for watch IDs used by Accelerometer. Values of these type are actually `number` at runtime.*/
-extern interface WatchHandle
+typedef WatchHandle =
 { }

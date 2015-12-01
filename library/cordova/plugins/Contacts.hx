@@ -1,14 +1,8 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
-extern interface Navigator
-{
-	/** Provides access to the device contacts database. */
-	var contacts : Contacts;
-}
-
-extern interface Contacts
+typedef Contacts =
 {
 	/**
 	 * The navigator.contacts.create method is synchronous, and returns a new Contact object.
@@ -42,7 +36,7 @@ extern interface Contacts
 		onError:ContactError->Void) : Void
 }
 
-extern interface ContactProperties
+typedef ContactProperties =
 {
 	/** A globally unique identifier. */
 	@:optional var id : String;
@@ -79,8 +73,10 @@ extern interface ContactProperties
  * from the device contacts database. Contacts can also be retrieved (individually or in bulk)
  * from the database by invoking the navigator.contacts.find method.
  */
-extern interface Contact extends ContactProperties
+typedef Contact =
 {
+	>ContactProperties,
+
 	/**
 	 * Returns a new Contact object that is a deep copy of the calling object, with the id property set to null
 	 */
@@ -123,7 +119,7 @@ declare var Contact:
 };
 
 /** The ContactError object is returned to the user through the contactError callback function when an error occurs. */
-extern interface ContactError
+typedef ContactError =
 {
 	/** Error code */
 	var code : Float;
@@ -144,7 +140,7 @@ declare ContactError:
 };
 
 /** Contains different kinds of information about a Contact object's name. */
-extern interface ContactName
+typedef ContactName =
 {
 	/** The complete name of the contact. */
 	@:optional var formatted : String;
@@ -183,7 +179,7 @@ declare ContactName:
  * url when the value attribute contains a URL to the photo image, or base64 when the value
  * contains a base64-encoded image string.
  */
-extern interface ContactField
+typedef ContactField =
 {
 	/** A string that indicates what type of field this is, home for example. */
 	var type : String;
@@ -205,7 +201,7 @@ declare ContactField:
  * The ContactAddress object stores the properties of a single address of a contact.
  * A Contact object may include more than one address in a ContactAddress[] array.
  */
-extern interface ContactAddress
+typedef ContactAddress =
 {
 	/** Set to true if this ContactAddress contains the user's preferred value. */
 	@:optional var pref : Bool;
@@ -242,7 +238,7 @@ declare ContactAddress:
  * The ContactOrganization object stores a contact's organization properties. A Contact object stores
  * one or more ContactOrganization objects in an array.
  */
-extern interface ContactOrganization
+typedef ContactOrganization =
 {
 	/** Set to true if this ContactOrganization contains the user's preferred value. */
 	@:optional var pref : Bool;
@@ -267,7 +263,7 @@ declare ContactOrganization:
 };
 
 /** Search options to filter navigator.contacts.  */
-extern interface ContactFindOptions
+typedef ContactFindOptions =
 {
 	/** The search string used to find navigator.contacts. */
 	@:optional var filter : String;

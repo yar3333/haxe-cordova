@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -6,7 +6,7 @@ import js.html.*;
  * This plugin defines a global device object, which describes the device's hardware and software.
  * Although the object is in the global scope, it is not available until after the deviceready event.
  */
-extern interface Device
+typedef Device =
 {
 	/** Get the version of Cordova running on the device. */
 	var cordova : String;

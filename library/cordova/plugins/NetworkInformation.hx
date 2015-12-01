@@ -1,24 +1,7 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
-extern interface Navigator
-{
-	/**
-	 * This plugin provides an implementation of an old version of the Network Information API.
-	 * It provides information about the device's cellular and wifi connection, and whether the device has an internet connection.
-	 */
-	var connection : Connection;
-	// see https://github.com/apache/cordova-plugin-network-information/blob/dev/doc/index.md#api-change
-	// for 
-	network:
-	{
-		/**
-		 * This plugin provides an implementation of an old version of the Network Information API.
-		 * It provides information about the device's cellular and wifi connection, and whether the device has an internet connection.
-		 */
-		connection: Connection
-	}
 }
 
 extern class Document
@@ -31,7 +14,7 @@ extern class Document
  * The connection object, exposed via navigator.connection, provides information
  * about the device's cellular and wifi connection.
  */
-extern interface Connection
+typedef Connection =
 {
 	/**
 	 * This property offers a fast way to determine the device's network connection state, and type of connection.

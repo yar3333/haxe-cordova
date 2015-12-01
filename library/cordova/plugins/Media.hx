@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -23,7 +23,7 @@ declare var Media:
  * and is provided for convenience only. A future implementation will adhere to the latest
  * W3C specification and may deprecate the current APIs.
  */
-extern interface Media
+typedef Media =
 {
 	/**
 	 * Returns the current position within an audio file. Also updates the Media object's position parameter.

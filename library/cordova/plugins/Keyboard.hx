@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -26,7 +26,7 @@ import js.html.*;
  * </code>
  *
  */
-extern interface Keyboard
+typedef Keyboard =
 {
 	// Methods
 

@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -19,7 +19,7 @@ extern class Window
 		?creationCallback:Database->Void) : Database;
 }
 
-extern interface Database
+typedef Database =
 {
 	/**
 	 * Starts new transaction.
@@ -55,7 +55,7 @@ declare var Database:
 		creationCallback:Database->Void) : Database;
 };
 
-extern interface SqlTransaction
+typedef SqlTransaction =
 {
 	/**
 	 * Executes SQL statement via current transaction.
@@ -75,20 +75,20 @@ declare SqlTransaction:
 	function new() : SqlTransaction;
 };
 
-extern interface SqlResultSet
+typedef SqlResultSet =
 {
 	var insertId : Float;
 	var rowsAffected : Float;
 	var rows : SqlResultSetRowList;
 }
 
-extern interface SqlResultSetRowList
+typedef SqlResultSetRowList =
 {
 	var length : Float;
 	function item(index:Float) : Dynamic;
 }
 
-extern interface SqlError
+typedef SqlError =
 {
 	var code : Float;
 	var message : String;

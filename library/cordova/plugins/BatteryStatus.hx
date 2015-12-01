@@ -1,4 +1,4 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
 
@@ -88,10 +88,8 @@ extern class Window
 }
 
 /** Object, that passed into battery event listener */
-typedef BatteryStatusEvent =
+extern class BatteryStatusEvent extends Event
 {
-	>Event,
-
 	/* The percentage of battery charge (0-100). */
 	var level : Float;
 	/* A boolean that indicates whether the device is plugged in. */

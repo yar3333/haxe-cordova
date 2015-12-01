@@ -1,23 +1,13 @@
-package cordova;
+package cordova.plugins;
 
 import js.html.*;
-
-extern interface Navigator
-{
-	/** 
-	 * This plugin provides access to the device's compass. The compass is a sensor that detects
-	 * the direction or heading that the device is pointed, typically from the top of the device.
-	 * It measures the heading in degrees from 0 to 359.99, where 0 is north.
-	 */
-	var compass : Compass;
-}
 
 /** 
  * This plugin provides access to the device's compass. The compass is a sensor that detects
  * the direction or heading that the device is pointed, typically from the top of the device.
  * It measures the heading in degrees from 0 to 359.99, where 0 is north.
  */
-extern interface Compass
+typedef Compass =
 {
 	/**
 	 * Get the current compass heading. The compass heading is returned via a CompassHeading
@@ -50,7 +40,7 @@ extern interface Compass
 }
 
 /** A CompassHeading object is returned to the compassSuccess callback function. */
-extern interface CompassHeading
+typedef CompassHeading =
 {
 	/** The heading in degrees from 0-359.99 at a single moment in time. */
 	var magneticHeading : Float;
@@ -62,14 +52,14 @@ extern interface CompassHeading
 	var timestamp : Float;
 }
 
-extern interface CompassOptions
+typedef CompassOptions =
 {
 	@:optional var filter : Float;
 	@:optional var frequency : Float;
 }
 
 /** A CompassError object is returned to the onError callback function when an error occurs. */
-extern interface CompassError
+typedef CompassError =
 {
 	/**
 	 * One of the predefined error codes
