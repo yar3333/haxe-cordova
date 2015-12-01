@@ -72,7 +72,7 @@ typedef CompassError =
 declare var CompassError:
 {
 	/** Constructor for CompassError object */
-	function new(code:Float) : CompassError;
+	function new(code:Float) : Void;
 	COMPASS_INTERNAL_ERR : Float,
 	COMPASS_NOT_SUPPORTED: Float;
 }

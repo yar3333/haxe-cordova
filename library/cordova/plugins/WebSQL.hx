@@ -52,7 +52,7 @@ declare var Database:
 		version: String,
 		displayname: String,
 		size: Float,
-		creationCallback:Database->Void) : Database;
+		creationCallback:Database->Void) : Void;
 }
 
 typedef SqlTransaction =

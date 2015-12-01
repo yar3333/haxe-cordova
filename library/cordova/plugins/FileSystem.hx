@@ -331,7 +331,7 @@ typedef FileError =
 
 declare FileError:
 {
-	function new(code:Float) : FileError;
+	function new(code:Float) : Void;
 	static var NOT_FOUND_ERR : Float;
 	static var SECURITY_ERR : Float;
 	static var ABORT_ERR : Float;
