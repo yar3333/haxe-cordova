@@ -10,6 +10,7 @@ using cordova.plugins.FileSystem;
 using cordova.plugins.FileTransfer;
 using cordova.plugins.Globalization;
 using cordova.plugins.InAppBrowser;
+using cordova.plugins.Keyboard;
 
 class Test
 {
