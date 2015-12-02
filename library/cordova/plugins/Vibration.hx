@@ -3,6 +3,21 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
+typedef Navigator =
+{
+	/**
+	 * Vibrates the device for the specified amount of time.
+	 * @param time Milliseconds to vibrate the device. 0 cancels the vibration. Ignored on iOS.
+	 */
+	function vibrate(time:Float) : Void;
+
+	/**
+	 * Vibrates the device with a given pattern.
+	 * @param time Sequence of durations (in milliseconds) for which to turn on or off the vibrator. Ignored on iOS.
+	 */
+	function vibrate(time:Array<Float>) : Void;
+}
+
 extern class Notification
 {
 	/**

@@ -10,6 +10,7 @@ library: native-ts FORCE
 	
 	haxelib run refactor processFile library/cordova/Cordova.hx postprocess-Cordova.rules
 	haxelib run refactor processFile library/cordova/plugins/Camera.hx postprocess-Camera.rules
+	haxelib run refactor processFile library/cordova/plugins/Contacts.hx postprocess-Contacts.rules
 	haxelib run refactor processFile library/cordova/plugins/Device.hx postprocess-Device.rules
 	haxelib run refactor processFile library/cordova/plugins/DeviceMotion.hx postprocess-DeviceMotion.rules
 	haxelib run refactor processFile library/cordova/plugins/DeviceOrientation.hx postprocess-DeviceOrientation.rules
@@ -23,6 +24,7 @@ library: native-ts FORCE
 	haxelib run refactor processFile library/cordova/plugins/MediaCapture.hx postprocess-MediaCapture.rules
 	haxelib run refactor processFile library/cordova/plugins/NetworkInformation.hx postprocess-NetworkInformation.rules
 	haxelib run refactor processFile library/cordova/plugins/Push.hx postprocess-Push.rules
+	haxelib run refactor processFile library/cordova/plugins/Splashscreen.hx postprocess-Splashscreen.rules
 	
 	haxelib run refactor replace library/cordova/plugins *.hx "%package cordova;%package cordova.plugins;%"
 	haxelib run refactor override library

@@ -1,7 +1,5 @@
 /////////////////////////////////// YOU CAN EDIT THIS ///////////////////////////////////
 
-DELETE_TYPES = Navigator
-
 CLASSES = Document|Window
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
 CLASSES = CLASSES|Entry|DirectoryEntry|FileEntry|EventTarget|DirectoryReader|FileSaver|FileWriter
@@ -118,7 +116,6 @@ OPEN = (?:MLCOMMENT)?\s*function\s*open\(url:String,\s*\?target:String,\s*\?opti
 /extern interface (ID)\b([^{]*?BODY_WO_END_BRACKET)\}\s*(?:COMMENTS)?\s*declare(?:\s+var)?\s+\1\s*:\s*\{/extern class $1$2/s
 
 /extern interface (CLASSES|STATIC)\b/extern class $1/
-/extern interface (DELETE_TYPES)\n(?:BODY)//m
 
 /extern interface \b(DYNAMIC)\n(?:BODY)/typedef $1 = Dynamic;\n\n/
 
