@@ -3,13 +3,9 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-extern class Device
-{
-	static var capture : Capture;
-}
-
 /** This plugin provides access to the device's audio, image, and video capture capabilities. */
-typedef Capture =
+@:noUsing
+@:native("window.device.capture") extern class Capture
 {
 	/**
 	 * Start the audio recorder application and return information about captured audio clip files.
@@ -19,7 +15,7 @@ typedef Capture =
 	 *                  with a CaptureError object, featuring the CaptureError.CAPTURE_NO_MEDIA_FILES error code.
 	 * @param options   Encapsulates audio capture configuration options.
 	 */
-	function captureAudio(
+	static function captureAudio(
 			onSuccess:Array<MediaFile>->Void,
 			onError:CaptureError->Void,
 			?options:AudioOptions) : Void ;
@@ -31,7 +27,7 @@ typedef Capture =
 	 *                  with a CaptureError object, featuring the CaptureError.CAPTURE_NO_MEDIA_FILES error code.
 	 * @param options   Encapsulates audio capture configuration options.
 	 */
-	function captureImage(
+	static function captureImage(
 			onSuccess:Array<MediaFile>->Void,
 			onError:CaptureError->Void,
 			?options:ImageOptions) : Void ;
@@ -43,16 +39,16 @@ typedef Capture =
 	 *                  with a CaptureError object, featuring the CaptureError.CAPTURE_NO_MEDIA_FILES error code.
 	 * @param options   Encapsulates audio capture configuration options.
 	 */
-	function captureVideo(
+	static function captureVideo(
 			onSuccess:Array<MediaFile>->Void,
 			onError:CaptureError->Void,
 			?options:VideoOptions) : Void ;
 	/** The audio recording formats supported by the device. */
-	var supportedAudioModes : Array<ConfigurationData>;
+	static var supportedAudioModes : Array<ConfigurationData>;
 	/** The recording image sizes and formats supported by the device. */
-	var supportedImageModes : Array<ConfigurationData>;
+	static var supportedImageModes : Array<ConfigurationData>;
 	/** The recording video resolutions and formats supported by the device. */
-	var supportedVideoModes : Array<ConfigurationData>;
+	static var supportedVideoModes : Array<ConfigurationData>;
 }
 
 /** Encapsulates properties of a media capture file. */

@@ -1,0 +1,2 @@
+/extern class Device [^}]+\} //z
+/extern class (Capture)\b/@:noUsing\n@:native("window.device.capture") extern class $1/
