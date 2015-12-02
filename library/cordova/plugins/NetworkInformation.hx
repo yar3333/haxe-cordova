@@ -5,15 +5,15 @@ import js.html.*;
 
 extern class Document
 {
-	function addEventListener(type: "online", connectionStateCallback:Void->Dynamic, ?useCapture:Bool) : Void;
-	function addEventListener(type: "offline", connectionStateCallback:Void->Dynamic, ?useCapture:Bool) : Void;
+	static inline function addEventListener_online(document:js.html.Document, connectionStateCallback:Void->Dynamic, ?useCapture:Bool) : Void document.addEventListener("online", connectionStateCallback, useCapture);
+	static inline function addEventListener_offline(document:js.html.Document, connectionStateCallback:Void->Dynamic, ?useCapture:Bool) : Void document.addEventListener("offline", connectionStateCallback, useCapture);
 }
 
 /**
  * The connection object, exposed via navigator.connection, provides information
  * about the device's cellular and wifi connection.
  */
-extern class Connection
+@:native("window.navigator.connection") extern class Connection
 {
 	/**
 	 * This property offers a fast way to determine the device's network connection state, and type of connection.
@@ -27,7 +27,7 @@ extern class Connection
 	 *     Connection.CELL
 	 *     Connection.NONE
 	 */
-	type: Float;
+	static var type: Float;
 
 	static var UNKNOWN : Float;
 	static var ETHERNET : Float;
