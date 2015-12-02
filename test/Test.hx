@@ -14,6 +14,7 @@ using cordova.plugins.Keyboard;
 using cordova.plugins.Media;
 using cordova.plugins.MediaCapture;
 using cordova.plugins.NetworkInformation;
+using cordova.plugins.Push;
 
 class Test
 {
