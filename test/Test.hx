@@ -7,6 +7,7 @@ using cordova.plugins.DeviceMotion;
 using cordova.plugins.DeviceOrientation;
 using cordova.plugins.Dialogs;
 using cordova.plugins.FileSystem;
+using cordova.plugins.FileTransfer;
 
 class Test
 {

@@ -67,7 +67,7 @@ extern class SqlTransaction
 		?successCallback:SqlTransaction->SqlResultSet->Void,
 		?errorCallback:SqlTransaction->SqlError->Dynamic) : Void;
 
-	function new() : SqlTransaction;
+	function new() : Void;
 }
 
 typedef SqlResultSet =

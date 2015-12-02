@@ -2,6 +2,7 @@ package cordova.plugins;
 
 import js.*;
 import js.html.*;
+import cordova.plugins.FileSystem.FileEntry;
 
 /**
  * The FileTransfer object provides a way to upload files using an HTTP multi-part POST request,
@@ -57,7 +58,7 @@ extern class FileTransfer
 	 */
 	function abort() : Void;
 
-	function new() : FileTransfer;
+	function new() : Void;
 }
 
 /** A FileUploadResult object is passed to the success callback of the FileTransfer object's upload() method. */
