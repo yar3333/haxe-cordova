@@ -1,0 +1,8 @@
+ID = \b[_a-zA-Z][_a-zA-Z0-9]*\b
+
+/extern class (Keyboard)\b/@:noUsing\n@:native("window.keyboard") extern class $1/
+/(: ID),/$1;/z
+
+/(\n[ \t]*)(ID\s*:\s*ID;)/$1static var $2/
+
+/declare var Keyboard : Keyboard; //z

@@ -27,7 +27,8 @@ import js.html.*;
  * </code>
  *
  */
-typedef Keyboard =
+@:noUsing
+@:native("window.keyboard") extern class Keyboard
 {
 	// Methods
 
@@ -47,7 +48,7 @@ typedef Keyboard =
 	 *
 	 * @param shrink
 	 */
-	function shrinkView(shrink:Bool) : Void,
+	static function shrinkView(shrink:Bool) : Void;
 
 	/**
 	 * Hide the keyboard toolbar.
@@ -63,7 +64,7 @@ typedef Keyboard =
 	 *
 	 * @param hide
 	 */
-	function hideFormAccessoryBar(hide:Bool) : Void,
+	static function hideFormAccessoryBar(hide:Bool) : Void;
 
 	/**
 	 * Disable scrolling when the the WebView is shrunk.
@@ -78,7 +79,7 @@ typedef Keyboard =
 	 *
 	 * @param disable
 	 */
-	function disableScrollingInShrinkView(disable:Bool) : Void,
+	static function disableScrollingInShrinkView(disable:Bool) : Void;
 
 	// Properties
 
@@ -95,12 +96,12 @@ typedef Keyboard =
 	 * </code>
 	 *
 	 */
-	isVisible: Bool,
+	static var isVisible: Bool;
 	/**
 	 * Specifies whenether content of page would be autoamtically scrolled to the top of the page when keyboard is hiding.
 	 *
 	 * Set this to true if you need that page scroll to beginning when keyboard is hiding.
-	 * This is allows to fix issue with elements declared with position: fixed, after keyboard is hiding.
+	 * This is allows to fix issue with elements declared with position: fixed; after keyboard is hiding.
 	 *
 	 * Example:
 	 * <code>
@@ -108,7 +109,7 @@ typedef Keyboard =
 	 * </code>
 	 *
 	 */
-	automaticScrollToTopOnHiding: Bool,
+	static var automaticScrollToTopOnHiding: Bool;
 
 	// Events
 
@@ -125,7 +126,7 @@ typedef Keyboard =
 	 * </code>
 	 *
 	 */
-	function onshow() : Void,
+	static function onshow() : Void;
 	/**
 	 * If defined, this function is fired when keyboard fully closed.
 	 *
@@ -139,7 +140,7 @@ typedef Keyboard =
 	 * </code>
 	 *
 	 */
-	function onhide() : Void,
+	static function onhide() : Void;
 	/**
 	 * If defined, this function is fired before keyboard will be shown.
 	 *
@@ -153,7 +154,7 @@ typedef Keyboard =
 	 * </code>
 	 *
 	 */
-	function onshowing() : Void,
+	static function onshowing() : Void;
 	/**
 	 * If defined, this function is fired when keyboard is about to be closed.
 	 *
@@ -167,7 +168,6 @@ typedef Keyboard =
 	 * </code>
 	 *
 	 */
-	function onhiding() : Void;
+	static function onhiding() : Void;
 }
 
-declare var Keyboard : Keyboard;
