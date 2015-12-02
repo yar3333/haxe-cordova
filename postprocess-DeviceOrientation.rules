@@ -1,1 +1,5 @@
+BODY_WO_END_BRACKET = \{(?:[{][^}]*?\}|[^{}])*?
+BODY = BODY_WO_END_BRACKET\}\s*
+/typedef Navigator = (?:BODY)//mz
+
 /extern class (Compass)\b/@:noUsing\n@:native("window.navigator.compass") extern class $1/

@@ -1,0 +1,11 @@
+BODY_CONTENT = (?:[{][^}]*?\}|[^{}])*?
+/typedef Navigator = \{(BODY_CONTENT)\}/$1/mz
+
+/ (splashscreen): \{(BODY_CONTENT)\};?/\nextern class $1\n{$2\n}/z
+
+/\t\t/\t/
+/\t(\/\*\* This plugin)/$1/
+
+/extern class splashscreen/@:noUsing\n@:native("window.navigator.splashscreen") extern class Splashscreen/z
+
+/(\n\s*)(function|var)/$1static $2/

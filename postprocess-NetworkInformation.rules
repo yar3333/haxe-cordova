@@ -1,3 +1,7 @@
+BODY_WO_END_BRACKET = \{(?:[{][^}]*?\}|[^{}])*?
+BODY = BODY_WO_END_BRACKET\}\s*
+/typedef Navigator = (?:BODY)//mz
+
 /(\n\s*)(type: Float;)/$1static var $2/
 
 /extern class Connection/@:native("window.navigator.connection") $0/z
