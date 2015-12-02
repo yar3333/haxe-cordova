@@ -9,6 +9,7 @@ using cordova.plugins.Dialogs;
 using cordova.plugins.FileSystem;
 using cordova.plugins.FileTransfer;
 using cordova.plugins.Globalization;
+using cordova.plugins.InAppBrowser;
 
 class Test
 {
