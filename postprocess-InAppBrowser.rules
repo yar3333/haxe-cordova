@@ -1,10 +1,10 @@
 ID = \b[_a-zA-Z][_a-zA-Z0-9]*\b
 MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
 
-IN_APP_BROWSER_ADD_EVENT_LISTENER_TYPED = function\s*addEventListener\(type\s*:\s*"(ID)",\s*callback:InAppBrowserEvent->Void\)\s*:\s*Void;
-IN_APP_BROWSER_REMOVE_EVENT_LISTENER_TYPED = function\s*removeEventListener\(type:\s*"(ID)",\s*callback:InAppBrowserEvent->Void\)\s*:\s*Void;
-IN_APP_BROWSER_ADD_EVENT_LISTENER = (?:MLCOMMENT)?\s*function addEventListener\(type:String, callback:InAppBrowserEvent->Void\) : Void;
-IN_APP_BROWSER_REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:String, callback:InAppBrowserEvent->Void\) : Void;
+IN_APP_BROWSER_ADD_EVENT_LISTENER_TYPED = function addEventListener\(type : "(ID)", callback : InAppBrowserEvent->Void\) : Void;
+IN_APP_BROWSER_REMOVE_EVENT_LISTENER_TYPED = function removeEventListener\(type : "(ID)", callback : InAppBrowserEvent->Void\) : Void;
+IN_APP_BROWSER_ADD_EVENT_LISTENER = (?:MLCOMMENT)? function addEventListener\(type:String, callback:InAppBrowserEvent->Void\) : Void;
+IN_APP_BROWSER_REMOVE_EVENT_LISTENER = (?:MLCOMMENT)? function removeEventListener\(type:String, callback:InAppBrowserEvent->Void\) : Void;
 
 /extern class Window\b/extern class InAppBrowserWindow/
 /(extern class InAppBrowserEvent [^}]+?)(var type : String;)/$1\/\/ $2/
@@ -16,8 +16,8 @@ IN_APP_BROWSER_REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventList
 /function insertCSS\(css: \{ code: String \}, callback:Void->Void\) : Void;/function insertCSS(css:{ ?code:String, ?file:String }, callback:Void->Void) : Void;/
 /(function insertCSS\(css: \{ file: String \}, callback:Void->Void\) : Void;)/\/\/ $1/
 
-/(class InAppBrowser[^{]*\{[^}]*?\n\s*)IN_APP_BROWSER_ADD_EVENT_LISTENER_TYPED/$1inline function addEventListener_$2(callback:InAppBrowserEvent->Void) : Void addEventListener("$2", callback);/r
-/(class InAppBrowser[^{]*\{[^}]*?\n\s*)IN_APP_BROWSER_REMOVE_EVENT_LISTENER_TYPED/$1inline function removeEventListener_$2(callback:InAppBrowserEvent->Void) : Void removeEventListener("$2", callback);/r
-/(class InAppBrowser[^{]*\{[^}]*?\n)\s*IN_APP_BROWSER_ADD_EVENT_LISTENER\n/$1/
-/(class InAppBrowser[^{]*\{[^}]*?\n)\s*IN_APP_BROWSER_REMOVE_EVENT_LISTENER\n/$1/
-/(class InAppBrowser[^{]*\{[^}]*?\n\s*)(function close\(\) : Void;)/$1\/\/ $2/
+/(class InAppBrowser[^{]*\{[^}]*?\n\s*)IN_APP_BROWSER_ADD_EVENT_LISTENER_TYPED/$1inline function addEventListener_$2(callback:InAppBrowserEvent->Void) : Void addEventListener("$2", callback);/rz
+/(class InAppBrowser[^{]*\{[^}]*?\n\s*)IN_APP_BROWSER_REMOVE_EVENT_LISTENER_TYPED/$1inline function removeEventListener_$2(callback:InAppBrowserEvent->Void) : Void removeEventListener("$2", callback);/rz
+/(class InAppBrowser[^{]*\{[^}]*?\n)\s*IN_APP_BROWSER_ADD_EVENT_LISTENER\n/$1/z
+/(class InAppBrowser[^{]*\{[^}]*?\n)\s*IN_APP_BROWSER_REMOVE_EVENT_LISTENER\n/$1/z
+/(class InAppBrowser[^{]*\{[^}]*?\n\s*)(function close\(\) : Void;)/$1\/\/ $2/z
