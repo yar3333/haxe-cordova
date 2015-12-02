@@ -1,0 +1,6 @@
+/extern class (Globalization)\b/@:noUsing\n@:native("window.navigator.globalization") extern class $1/
+
+/options[?]:/?options:/
+
+/@:optional formatLength : String,/?formatLength:String,/
+/@:optional var selector : String;/?selector:String/
