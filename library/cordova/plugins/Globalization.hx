@@ -4,7 +4,8 @@ import js.*;
 import js.html.*;
 
 /** This plugin obtains information and performs operations specific to the user's locale and timezone. */
-typedef Globalization =
+@:noUsing
+@:native("window.navigator.globalization") extern class Globalization
 {
 	/**
 	 * Get the string identifier for the client's current language.
@@ -13,7 +14,7 @@ typedef Globalization =
 	 * @param onError   Called on error getting the language with a GlobalizationError object.
 	 *                  The error's expected code is GlobalizationError.UNKNOWN_ERROR.
 	 */
-	function getPreferredLanguage(
+	static function getPreferredLanguage(
 		onSuccess:{ value: String }->Void,
 		onError:GlobalizationError->Void) : Void;
 	/**
@@ -23,7 +24,7 @@ typedef Globalization =
 	 * @param onError   Called on error getting the locale identifier with a GlobalizationError object.
 	 *                  The error's expected code is GlobalizationError.UNKNOWN\_ERROR.
 	 */
-	function getLocaleName(
+	static function getLocaleName(
 		onSuccess:{ value: String }->Void,
 		onError:GlobalizationError->Void) : Void;
 	/**
@@ -37,14 +38,14 @@ typedef Globalization =
 	 *                      - 'formatLength' can be "short", "medium", "long", or "full".
 	 *                      - 'selector' can be "date", "time", or "date and time".
 	 */
-	function dateToString(
+	static function dateToString(
 		date: Date,
 		onSuccess:{ value: String }->Void,
 		onError:GlobalizationError->Void,
-		options?:
+		?options:
 		{
-			@:optional formatLength : String,// "short" | "medium" | "long" | "full"
-			@:optional var selector : String;// "date" | "time" | "date and time"
+			?formatLength:String,// "short" | "medium" | "long" | "full"
+			?selector:String// "date" | "time" | "date and time"
 		}) : Void;
 	/**
 	 * Parses a date formatted as a string, according to the client's user preferences
@@ -55,7 +56,7 @@ typedef Globalization =
 	 *                    The error's expected code is GlobalizationError.PARSING_ERROR.
 	 * @param options     Optional parse parameters. Default {formatLength:'short', selector:'date and time'}
 	 */
-	function stringToDate(
+	static function stringToDate(
 		dateString: String,
 		onSuccess:GlobalizationDate->Void,
 		onError:GlobalizationError->Void,
@@ -67,7 +68,7 @@ typedef Globalization =
 	 *                  The error's expected code is GlobalizationError.PATTERN_ERROR.
 	 * @param options   Optional format parameters. Default {formatLength:'short', selector:'date and time'}
 	 */
-	function getDatePattern(
+	static function getDatePattern(
 		onSuccess:GlobalizationDatePattern->Void,
 		onError:GlobalizationError->Void,
 		?options:{ ?type:String, ?item:String }) : Void;
@@ -79,7 +80,7 @@ typedef Globalization =
 	 *                  The error's expected code is GlobalizationError.UNKNOWN_ERROR.
 	 * @param options   Optional parameters. Default: {type:'wide', item:'months'}
 	 */
-	function getDateNames(
+	static function getDateNames(
 		onSuccess:{ value: Array<String> }->Void,
 		onError:GlobalizationError->Void,
 		?options:{ ?type:String, ?item:String }) : Void;
@@ -91,7 +92,7 @@ typedef Globalization =
 	 * @param onError   Called on error with a GlobalizationError object.
 	 *                  The error's expected code is GlobalizationError.UNKNOWN_ERROR.
 	 */
-	function isDaylightSavingsTime(
+	static function isDaylightSavingsTime(
 		date: Date,
 		onSuccess:{ dst: Bool }->Void,
 		onError:GlobalizationError->Void) : Void;
@@ -102,7 +103,7 @@ typedef Globalization =
 	 * @param onError   Called on error with a GlobalizationError object.
 	 *                  The error's expected code is GlobalizationError.UNKNOWN_ERROR.
 	 */
-	function getFirstDayOfWeek(
+	static function getFirstDayOfWeek(
 		onSuccess:{ value: Float }->Void,
 		onError:GlobalizationError->Void) : Void;
 	/**
@@ -114,7 +115,7 @@ typedef Globalization =
 	 *                  The error's expected code is GlobalizationError.FORMATTING_ERROR.
 	 * @param format    Optional format parameters. Default: {type:'decimal'}
 	 */
-	function nubmerToString(
+	static function nubmerToString(
 		value: Float,
 		onSuccess:{ value: String }->Void,
 		onError:GlobalizationError->Void,
@@ -128,7 +129,7 @@ typedef Globalization =
 	 *                  The error's expected code is GlobalizationError.FORMATTING_ERROR.
 	 * @param format    Optional format parameters. Default: {type:'decimal'}
 	 */
-	function stringToNumber(
+	static function stringToNumber(
 		value: String,
 		onSuccess:{ value: Float }->Void,
 		onError:GlobalizationError->Void,
@@ -140,7 +141,7 @@ typedef Globalization =
 	 *                  The error's expected code is GlobalizationError.PATTERN_ERROR.
 	 * @param options   Optional format parameters. Default {type:'decimal'}.
 	 */
-	function getNumberPattern(
+	static function getNumberPattern(
 		onSuccess:GlobalizationNumberPattern->Void,
 		onError:GlobalizationError->Void,
 		?format:{ ?type:String }) : Void;
@@ -152,7 +153,7 @@ typedef Globalization =
 	 *                      The error's expected code is GlobalizationError.FORMATTING_ERROR.
 	 * @param options       Optional format parameters. Default {type:'decimal'}.
 	 */
-	function getCurrencyPattern(
+	static function getCurrencyPattern(
 		currencyCode: String,
 		onSuccess:GlobalizationCurrencyPattern->Void,
 		onError:GlobalizationError->Void) : Void;
