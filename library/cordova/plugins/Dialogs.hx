@@ -5,7 +5,7 @@ import js.html.*;
 
 /** This plugin provides access to some native dialog UI elements. */
 @:noUsing
-@:native("window.navigator.notification") extern class Notification
+@:native("window.navigator.notification") extern class DialogsNotification
 {
 	/**
 	 * Shows a custom alert or dialog box. Most Cordova implementations use a native dialog box for this feature,

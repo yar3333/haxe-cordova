@@ -1,0 +1,12 @@
+BODY_WO_END_BRACKET = \{(?:[{][^}]*?\}|[^{}])*?
+BODY = BODY_WO_END_BRACKET\}\s*
+MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
+
+/typedef Navigator = /@:noUsing\n@:native("window.navigator") extern class Vibration\n/z
+/ extern class Notification BODY//z
+
+/(\n\s*)(function|var)/$1static $2/
+
+/static function vibrate\(time:Array<Float>\) : Void;/\/\/ $0/z
+
+/static function vibrate\(time:Float\) : Void;/@:overload(function(time:Array<Float>):Void{})\n\t$0/z
