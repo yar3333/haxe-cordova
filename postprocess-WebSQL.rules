@@ -1,2 +1,2 @@
-/extern class Window/@:noUsing\n@:native("window.navigator") extern class WebSQL/z
-/(function openDatabase)/static $0/
+/extern class Window/extern class WebSQLWindow/z
+/(function openDatabase)\(([^)]+\) : Database);/static inline $1(window:Window,\n\t\t$2\n\t\treturn (cast window).openDatabase(name, version, displayname, size, creationCallback);/z

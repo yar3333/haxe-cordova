@@ -3,8 +3,7 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-@:noUsing
-@:native("window.navigator") extern class WebSQL
+extern class WebSQLWindow
 {
 	/**
 	 * Creates (opens, if exist) database with supplied parameters.
@@ -14,11 +13,13 @@ import js.html.*;
 	 * @param  size        Size, in bytes
 	 * @param  creationCallback Callback, that executed on database creation. Accepts Database object.
 	 */
-	static function openDatabase(name:String,
+	static inline function openDatabase(window:Window,
+		name:String,
 		version: String,
 		displayname: String,
 		size: Float,
-		?creationCallback:Database->Void) : Database;
+		?creationCallback:Database->Void) : Database
+		return (cast window).openDatabase(name, version, displayname, size, creationCallback);
 }
 
 extern class Database
