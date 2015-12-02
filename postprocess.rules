@@ -9,7 +9,7 @@ CLASSES = CLASSES|InAppBrowser
 CLASSES = CLASSES|Media
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
 
-STATIC = Cordova|Camera|Device|Accelerometer|Compass|Notification|Globalization|Keyboard|Capture
+STATIC = Cordova|Camera|Device|Accelerometer|Compass|Notification|Globalization|Keyboard|Capture|PushNotification
 
 DYNAMIC = CordovaPlugins|WatchHandle
 

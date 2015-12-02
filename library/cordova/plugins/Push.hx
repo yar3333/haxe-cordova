@@ -3,27 +3,13 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-extern class Window
-{
-	plugins: Plugins;
-}
-
-typedef Plugins =
-{
-	/**
-	 * This plugin allows to receive push notifications. The Android implementation uses
-	 * Google's GCM (Google Cloud Messaging) service,
-	 * whereas the iOS version is based on Apple APNS Notifications
-	 */
-	pushNotification: PushNotification;
-}
-
 /**
  * This plugin allows to receive push notifications. The Android implementation uses
  * Google's GCM (Google Cloud Messaging) service,
  * whereas the iOS version is based on Apple APNS Notifications
  */
-typedef PushNotification =
+@:noUsing
+@:native("window.plugins.pushNotification") extern class PushNotification
 {
 	/**
 	 * Registers as push notification receiver.
@@ -31,7 +17,7 @@ typedef PushNotification =
 	 * @param errorCallback       Called when the plugin returns an error.
 	 * @param registrationOptions Options for registration process.
 	 */
-	function register(
+	static function register(
 		successCallback:String->Void,
 		errorCallback:Dynamic->Void,
 		registrationOptions: RegistrationOptions) : Void;
@@ -40,7 +26,7 @@ typedef PushNotification =
 	 * @param successCallback     Called when a plugin method returns without error.
 	 * @param errorCallback       Called when the plugin returns an error.
 	 */
-	function unregister(
+	static function unregister(
 		successCallback:Dynamic->Void,
 		errorCallback:Dynamic->Void) : Void;
 	/**
@@ -49,7 +35,7 @@ typedef PushNotification =
 	 * @param errorCallback   Called when the plugin returns an error.
 	 * @param badgeCount      An integer indicating what number should show up in the badge. Passing 0 will clear the badge.
 	 */
-	function setApplicationIconBadgeNumber(
+	static function setApplicationIconBadgeNumber(
 		successCallback:Dynamic->Void,
 		errorCallback:Dynamic->Void,
 		badgeCount: Float) : Void;
@@ -66,6 +52,6 @@ typedef RegistrationOptions =
 	@:optional var ecb : String;
 	@:optional var badge : Bool;
 	@:optional var sound : Bool;
-	?alert:Bool;
+	@:optional var alert:Bool;
 }
 

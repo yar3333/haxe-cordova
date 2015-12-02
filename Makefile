@@ -22,6 +22,7 @@ library: native-ts FORCE
 	haxelib run refactor processFile library/cordova/plugins/Media.hx postprocess-Media.rules
 	haxelib run refactor processFile library/cordova/plugins/MediaCapture.hx postprocess-MediaCapture.rules
 	haxelib run refactor processFile library/cordova/plugins/NetworkInformation.hx postprocess-NetworkInformation.rules
+	haxelib run refactor processFile library/cordova/plugins/Push.hx postprocess-Push.rules
 	
 	haxelib run refactor replace library/cordova/plugins *.hx "%package cordova;%package cordova.plugins;%"
 	haxelib run refactor override library
