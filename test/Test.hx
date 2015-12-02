@@ -13,6 +13,7 @@ using cordova.plugins.InAppBrowser;
 using cordova.plugins.Keyboard;
 using cordova.plugins.Media;
 using cordova.plugins.MediaCapture;
+using cordova.plugins.NetworkInformation;
 
 class Test
 {
