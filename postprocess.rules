@@ -37,7 +37,7 @@ MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
 SLCOMMENT = \/\/[^\n]*
 COMMENTS = [ \t]*(?:MLCOMMENT|SLCOMMENT)(?:[ \t]*\n[ \t]*(?:MLCOMMENT|SLCOMMENT))*
 CALLB_TYPE = TYPE->TYPE(?:->TYPE)*
-BODY_WO_END_BRACKET = \{[^}]*
+BODY_WO_END_BRACKET = \{(?:[{][^}]*?\}|[^{}])*?
 BODY = BODY_WO_END_BRACKET\}\s*
 ANY_CHARS = (?:.|[\n])*?
 
