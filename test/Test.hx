@@ -18,6 +18,7 @@ using cordova.plugins.Push;
 using cordova.plugins.Splashscreen;
 using cordova.plugins.StatusBar;
 using cordova.plugins.Vibration;
+using cordova.plugins.WebSQL;
 
 class Test
 {
