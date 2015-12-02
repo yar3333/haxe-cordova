@@ -5,6 +5,7 @@ DELETE_TYPES = Navigator
 CLASSES = Document|Window
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
 CLASSES = CLASSES|Entry|DirectoryEntry|FileEntry|EventTarget|DirectoryReader|FileSaver|FileWriter
+CLASSES = CLASSES|InAppBrowser
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
 
 STATIC = Cordova|Camera|Device|Accelerometer|Compass|Notification|Globalization
@@ -46,17 +47,26 @@ REMOVE_EVENT_LISTENER_TYPED = function\s*removeEventListener\(type\s*:\s*"(ID)",
 ADD_EVENT_LISTENER = (?:MLCOMMENT)?\s*function addEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;
 REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:String,\s*listener\s*:\s*CALLB_TYPE,\s*\?useCapture:Bool\) : Void;
 
+OPEN_TYPED = function\s*open\(url:String,\s*target\?:\s*"(ID)",\s*\?options:String\)\s*:\s*InAppBrowser;
+OPEN = (?:MLCOMMENT)?\s*function\s*open\(url:String,\s*\?target:String,\s*\?options:String,\s*\?replace:Bool\)\s*:\s*InAppBrowser;
+
 !^//[^\n]*(?:\n|\n//[^\n]*)*!!m
 
 /(extern interface Document\n\{[^}]*?\n\s*)ADD_EVENT_LISTENER_TYPED/$1static inline function addEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.addEventListener("$2", listener, useCapture);/r
-/(extern interface Document\n\{[^}]*?\n\s*)REMOVE_EVENT_LISTENER_TYPED/$1static inline function removeEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.removeEventListener("$2", listener, useCapture);/r
 /(extern interface Document\n\{[^}]*?\n)\s*ADD_EVENT_LISTENER\n/$1/
-/(extern interface Document\n\{[^}]*?\n)\s*REMOVE_EVENT_LISTENER\n/$1/
 
 /(extern interface Window\n\{[^}]*?\n\s*)ADD_EVENT_LISTENER_TYPED/$1static inline function addEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.addEventListener("$2", listener, useCapture);/r
-/(extern interface Window\n\{[^}]*?\n\s*)REMOVE_EVENT_LISTENER_TYPED/$1static inline function removeEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.removeEventListener("$2", listener, useCapture);/r
 /(extern interface Window\n\{[^}]*?\n)\s*ADD_EVENT_LISTENER\n/$1/
+
+/(extern interface Document\n\{[^}]*?\n\s*)REMOVE_EVENT_LISTENER_TYPED/$1static inline function removeEventListener_$2(document:js.html.Document, listener:$3, ?useCapture:Bool) : Void document.removeEventListener("$2", listener, useCapture);/r
+/(extern interface Document\n\{[^}]*?\n)\s*REMOVE_EVENT_LISTENER\n/$1/
+
+/(extern interface Window\n\{[^}]*?\n\s*)REMOVE_EVENT_LISTENER_TYPED/$1static inline function removeEventListener_$2(window:js.html.Window, listener:$3, ?useCapture:Bool) : Void window.removeEventListener("$2", listener, useCapture);/r
 /(extern interface Window\n\{[^}]*?\n)\s*REMOVE_EVENT_LISTENER\n/$1/
+
+/(extern interface Window\n\{[^}]*?\n\s*)OPEN_TYPED/$1static inline function open_$2(window:js.html.Window, url:String, ?options:String) : InAppBrowser return cast window.open(url, "$2", options);/r
+/(extern interface Window\n\{[^}]*?\n)\s*OPEN\n/$1/
+
 
 // fix overloads
 //    1                2         3                           4                     5            6
