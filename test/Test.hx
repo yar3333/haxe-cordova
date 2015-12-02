@@ -12,6 +12,7 @@ using cordova.plugins.Globalization;
 using cordova.plugins.InAppBrowser;
 using cordova.plugins.Keyboard;
 using cordova.plugins.Media;
+using cordova.plugins.MediaCapture;
 
 class Test
 {
