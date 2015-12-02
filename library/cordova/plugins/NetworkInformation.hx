@@ -3,9 +3,6 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-;
-}
-
 extern class Document
 {
 	function addEventListener(type: "online", connectionStateCallback:Void->Dynamic, ?useCapture:Bool) : Void;
