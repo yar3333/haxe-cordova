@@ -117,4 +117,4 @@ REMOVE_EVENT_LISTENER = (?:MLCOMMENT)?\s*function removeEventListener\(type:Stri
 /extern\s+interface\s+(ID)\s*\{/typedef $1 =\n{/
 
 
-/(function new\([^)]+?\)\s*:\s*)ID\s*;/$1Void;/s
+/(function new\([^)]*?\)\s*:\s*)ID\s*;/$1Void;/s

@@ -1,0 +1,1 @@
+/((?:^import\s+[^;]+;[ \t]*\n)+)/$1import cordova.plugins.FileSystem.FileEntry;\n/m

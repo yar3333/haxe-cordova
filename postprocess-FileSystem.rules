@@ -4,3 +4,5 @@
 /declare var FileWriter:/extern class FileWriter/
 /extern class Cordova\b/@:native("window.cordova") extern class FileSystemConstants/
 /(\n\s*)(file:)/$1static var $2/
+
+/extern class Window\b/extern class FileSystemWindow/

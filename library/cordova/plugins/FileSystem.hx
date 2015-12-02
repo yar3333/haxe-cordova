@@ -3,7 +3,7 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-extern class Window
+extern class FileSystemWindow
 {
 	/**
 	 * Requests a filesystem in which to store application data.
