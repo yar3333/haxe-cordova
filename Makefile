@@ -19,6 +19,7 @@ library: native-ts FORCE
 	haxelib run refactor processFile library/cordova/plugins/Globalization.hx postprocess-Globalization.rules
 	haxelib run refactor processFile library/cordova/plugins/InAppBrowser.hx postprocess-InAppBrowser.rules
 	haxelib run refactor processFile library/cordova/plugins/Keyboard.hx postprocess-Keyboard.rules
+	haxelib run refactor processFile library/cordova/plugins/Media.hx postprocess-Media.rules
 	
 	haxelib run refactor replace library/cordova/plugins *.hx "%package cordova;%package cordova.plugins;%"
 	haxelib run refactor override library

@@ -3,29 +3,27 @@ package cordova.plugins;
 import js.*;
 import js.html.*;
 
-declare var Media:
-{
-	function new(
-		src: String,
-		mediaSuccess: Void->Void,
-		?mediaError:MediaError->Dynamic,
-		?mediaStatus:Float->Void) : Void;
-		//Media statuses
-		static var MEDIA_NONE : Int;
-		static var MEDIA_STARTING : Float;
-		static var MEDIA_RUNNING : Float;
-		static var MEDIA_PAUSED : Float;
-		static var MEDIA_STOPPED : Float;
-}
-
 /**
  * This plugin provides the ability to record and play back audio files on a device.
  * NOTE: The current implementation does not adhere to a W3C specification for media capture,
  * and is provided for convenience only. A future implementation will adhere to the latest
  * W3C specification and may deprecate the current APIs.
  */
-typedef Media =
+@:native("Media") extern class Media
 {
+	function new(
+		src: String,
+		mediaSuccess: Void->Void,
+		?mediaError:MediaError->Dynamic,
+		?mediaStatus:Float->Void) : Void;
+	
+	//Media statuses
+	static var MEDIA_NONE : Int;
+	static var MEDIA_STARTING : Float;
+	static var MEDIA_RUNNING : Float;
+	static var MEDIA_PAUSED : Float;
+	static var MEDIA_STOPPED : Float;
+
 	/**
 	 * Returns the current position within an audio file. Also updates the Media object's position parameter.
 	 * @param mediaSuccess The callback that is passed the current position in seconds.

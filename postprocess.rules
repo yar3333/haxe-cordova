@@ -6,6 +6,7 @@ CLASSES = Document|Window
 CLASSES = CLASSES|Contacts|Contact|ContactProperties
 CLASSES = CLASSES|Entry|DirectoryEntry|FileEntry|EventTarget|DirectoryReader|FileSaver|FileWriter
 CLASSES = CLASSES|InAppBrowser
+CLASSES = CLASSES|Media
 CLASSES = CLASSES|[a-zA-Z0-9_]+Event
 
 STATIC = Cordova|Camera|Device|Accelerometer|Compass|Notification|Globalization|Keyboard

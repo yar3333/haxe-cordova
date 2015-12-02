@@ -1,0 +1,8 @@
+MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
+
+/declare var Media: \{([^}]+)\} (MLCOMMENT )extern class Media \{/$2extern class Media\n{$1/z
+
+/\n\t\t(\/\/Media statuses)/\n\t\n\t$1/
+/\n\t\t(static var MEDIA_)/\n\t$1/
+
+/extern class Media/@:native("Media") $0/
