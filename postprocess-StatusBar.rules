@@ -1,0 +1,6 @@
+BODY_WO_END_BRACKET = \{(?:[{][^}]*?\}|[^{}])*?
+BODY = BODY_WO_END_BRACKET\}\s*
+MLCOMMENT = \/\*(?:[^*]|(?:\*+(?:[^*\/])))*\*+\/
+/(?:MLCOMMENT)? extern class Window (?:BODY)//mz
+
+/extern class StatusBar/@:noUsing\n@:native("window.StatusBar") extern class StatusBar/z

@@ -16,6 +16,7 @@ using cordova.plugins.MediaCapture;
 using cordova.plugins.NetworkInformation;
 using cordova.plugins.Push;
 using cordova.plugins.Splashscreen;
+using cordova.plugins.StatusBar;
 
 class Test
 {
