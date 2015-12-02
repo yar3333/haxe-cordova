@@ -26,6 +26,7 @@ library: native-ts FORCE
 	haxelib run refactor processFile library/cordova/plugins/Push.hx postprocess-Push.rules
 	haxelib run refactor processFile library/cordova/plugins/Splashscreen.hx postprocess-Splashscreen.rules
 	haxelib run refactor processFile library/cordova/plugins/StatusBar.hx postprocess-StatusBar.rules
+	haxelib run refactor processFile library/cordova/plugins/Vibration.hx postprocess-Vibration.rules
 	
 	haxelib run refactor replace library/cordova/plugins *.hx "%package cordova;%package cordova.plugins;%"
 	haxelib run refactor override library
