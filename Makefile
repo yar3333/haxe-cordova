@@ -31,8 +31,6 @@ library: native-ts FORCE
 	haxelib run refactor processFile library/cordova/plugins/WebSQL.hx             rules/WebSQL.rules
 	
 	haxelib run refactor replace library/cordova/plugins *.hx "%package cordova;%package cordova.plugins;%"
-	haxelib run refactor override library
-	#cp -r manual/* library
 
 native-ts:
 	git init native-ts
