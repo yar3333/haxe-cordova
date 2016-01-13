@@ -1,0 +1,11 @@
+{
+  "name": "cordova",
+  "license": "MIT",
+  "tags": ["extern", "js", "javascript", "mobile", "html5"],
+  "description": "Externs for Apache Cordova library.",
+  "contributors": ["yar3333"],
+  "releasenote": "Init.",
+  "version": "1.0.0",
+  "url": "https://bitbucket.org/yar3333/haxe-cordova",
+  "dependencies": {}
+}
