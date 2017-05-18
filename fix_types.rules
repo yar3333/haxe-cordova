@@ -1,9 +1,10 @@
-#HTMLImageElement => ImageElement
-#HTMLCanvasElement => CanvasElement
-#HTMLVideoElement => VideoElement
-#AudioContext => js.html.audio.AudioContext
-#AudioBufferSourceNode => js.html.audio.AudioBufferSourceNode
-#GainNode => js.html.audio.GainNode
-#PannerNode => js.html.audio.PannerNode
-#WebGLRenderingContext => js.html.webgl.RenderingContext
-#HTMLElement => js.html.Element
+File => js.html.File
+EventTarget => js.html.EventTarget
+ProgressEvent => js.html.ProgressEvent
+Error => js.Error
+Blob => js.html.Blob
+
+*code => Int if Float
+*PERSISTENT => Int if Float
+*TEMPORARY => Int if Float
+*readyState => Int if Float
