@@ -12,7 +12,8 @@ build: native-ts
 	                                 native-ts/types/cordova \
 	                                 native-ts/types/cordova-plugin-device \
 	                                 native-ts/types/cordova-plugin-device-motion \
-	                                 native-ts/types/cordova-plugin-camera
+	                                 native-ts/types/cordova-plugin-camera \
+	                                 native-ts/types/cordova-plugin-device-orientation
 	haxelib run refactor override library
 	
 	# cordova
@@ -27,6 +28,9 @@ build: native-ts
 	
 	# cordova-plugin-camera
 	haxelib run refactor processFile library/cordova/camera.hx postfixes/camera.rules
+	
+	# cordova-plugin-device-orientation
+	haxelib run refactor processFile library/cordova/Compass.hx postfixes/Compass.rules
 	
 	cp -r manual/* library
 
