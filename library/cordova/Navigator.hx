@@ -8,4 +8,8 @@ extern interface Navigator
 	 * in three dimensions along the x, y, and z axis.
 	 */
 	var accelerometer : Accelerometer;
+	/**
+	 * This plugin provides an API for taking pictures and for choosing images from the system's image library.
+	 */
+	var camera : Camera;
 }
