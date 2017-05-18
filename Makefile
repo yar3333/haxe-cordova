@@ -6,9 +6,9 @@ build: native-ts
 	haxelib run refactor dts_to_haxe --out-dir library \
 	                                 --root-package cordova \
 	                                 --native-namespace window \
-									 --log-level warn \
-									 --type-mapper fix_types.rules \
-									 --typedef-file fix_force_typedefs.list \
+	                                 --log-level warn \
+	                                 --type-mapper fix_types.rules \
+	                                 --typedef-file fix_force_typedefs.list \
 	                                 native-ts/types/cordova \
 	                                 native-ts/types/cordova-plugin-device \
 	                                 native-ts/types/cordova-plugin-device-motion \
