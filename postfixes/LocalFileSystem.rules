@@ -1,0 +1,2 @@
+/@:native[(]"window.LocalFileSystem"[)]\nextern enum LocalFileSystem/@:enum\nabstract LocalFileSystem(Int)/
+/\t([A-Z]+)/\tvar $1/
