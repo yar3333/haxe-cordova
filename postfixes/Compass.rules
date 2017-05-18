@@ -1,0 +1,3 @@
+/extern interface Compass/@:native("window.navigator.compass")\nextern class Compass/
+/\n\tvar /\n\tstatic var /
+/\n\tfunction /\n\tstatic function /
