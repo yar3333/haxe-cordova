@@ -1,8 +1,6 @@
 package cordova;
 
-import js.html.*;
-
-@:native("cordova")
+@:native("window.cordova")
 extern class Cordova
 {
 	/**

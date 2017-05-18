@@ -1,8 +1,6 @@
 package cordova;
 
-import js.html.*;
-
-@:native("device")
+@:native("window.device")
 extern class Device
 {
 	/**
