@@ -1,0 +1,9 @@
+#HTMLImageElement => ImageElement
+#HTMLCanvasElement => CanvasElement
+#HTMLVideoElement => VideoElement
+#AudioContext => js.html.audio.AudioContext
+#AudioBufferSourceNode => js.html.audio.AudioBufferSourceNode
+#GainNode => js.html.audio.GainNode
+#PannerNode => js.html.audio.PannerNode
+#WebGLRenderingContext => js.html.webgl.RenderingContext
+#HTMLElement => js.html.Element

@@ -2,20 +2,21 @@
 <project version="2">
   <!-- Output SWF options -->
   <output>
-    <movie outputType="CustomBuild" />
+    <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin" />
+    <movie path="bin\index.n" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />
-    <movie version="0" />
+    <movie version="1" />
     <movie minorVersion="0" />
-    <movie platform="Custom" />
+    <movie platform="Neko" />
     <movie background="#FFFFFF" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="library" />
+    <class path="tests" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -23,7 +24,7 @@
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="Main" />
-    <option enabledebug="False" />
+    <option enabledebug="True" />
     <option additional="" />
   </build>
   <!-- haxelib libraries -->
@@ -41,13 +42,13 @@
     <hidden path="obj" />
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>make rebuild</preBuildCommand>
+  <preBuildCommand />
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
-    <option testMovie="OpenDocument" />
+    <option testMovie="Custom" />
     <option testMovieCommand="" />
   </options>
   <!-- Plugin storage -->
