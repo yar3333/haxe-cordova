@@ -11,7 +11,8 @@ build: native-ts
 									 --typedef-file fix_force_typedefs.list \
 	                                 native-ts/types/cordova \
 	                                 native-ts/types/cordova-plugin-device \
-	                                 native-ts/types/cordova-plugin-device-motion
+	                                 native-ts/types/cordova-plugin-device-motion \
+	                                 native-ts/types/cordova-plugin-camera
 	haxelib run refactor override library
 	
 	# cordova
@@ -23,6 +24,9 @@ build: native-ts
 	# cordova-plugin-device-motion
 	haxelib run refactor processFile library/cordova/Accelerometer.hx postfixes/Accelerometer.rules
 	haxelib run refactor replaceInFile library/cordova/WatchHandle.hx "@extern interface WatchHandle@abstract WatchHandle(Int)@"
+	
+	# cordova-plugin-camera
+	haxelib run refactor processFile library/cordova/camera.hx postfixes/camera.rules
 	
 	cp -r manual/* library
 
