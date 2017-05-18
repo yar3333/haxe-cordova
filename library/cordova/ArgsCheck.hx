@@ -1,7 +1,5 @@
 package cordova;
 
-import js.html.*;
-
 extern interface ArgsCheck
 {
 	var enableChecks : Bool;

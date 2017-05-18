@@ -7,15 +7,22 @@ build: native-ts
 	                                 --root-package cordova \
 	                                 --native-namespace window \
 									 --log-level warn \
-	                                 --import js.html.* \
 									 --type-mapper fix_types.rules \
 									 --typedef-file fix_force_typedefs.list \
 	                                 native-ts/types/cordova \
-	                                 native-ts/types/cordova-plugin-device
+	                                 native-ts/types/cordova-plugin-device \
+	                                 native-ts/types/cordova-plugin-device-motion
 	haxelib run refactor override library
 	
+	# cordova
 	haxelib run refactor processFile library/cordova/Cordova.hx postfixes/Cordova.rules
+	
+	# cordova-plugin-device
 	haxelib run refactor processFile library/cordova/Device.hx postfixes/Device.rules
+	
+	# cordova-plugin-device-motion
+	haxelib run refactor processFile library/cordova/Accelerometer.hx postfixes/Accelerometer.rules
+	haxelib run refactor replaceInFile library/cordova/WatchHandle.hx "@extern interface WatchHandle@abstract WatchHandle(Int)@"
 	
 	cp -r manual/* library
 
