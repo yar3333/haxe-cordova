@@ -23,9 +23,9 @@
     <option directives="" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
-    <option mainClass="Test" />
+    <option mainClass="Main" />
     <option enabledebug="True" />
-    <option additional="" />
+    <option additional="--macro include('cordova')" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
@@ -33,10 +33,11 @@
   </haxelib>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="Test.hx" />
+    <!-- example: <compile path="..." /> -->
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>
+    <hidden path="test.js" />
     <hidden path="obj" />
   </hiddenPaths>
   <!-- Executed before build -->
@@ -47,7 +48,7 @@
   <options>
     <option showHiddenPaths="False" />
     <option testMovie="Custom" />
-    <option testMovieCommand="index.html" />
+    <option testMovieCommand="test.html" />
   </options>
   <!-- Plugin storage -->
   <storage />
