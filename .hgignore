@@ -1,4 +1,4 @@
 syntax: glob
-native-ts
+native-ts/.git
 library/library.zip
 raw
